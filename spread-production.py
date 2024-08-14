@@ -8,8 +8,6 @@ Created in 2024
 import requests
 import pandas as pd
 import numpy as np
-import mysql.connector
-import sqlalchemy
 import matplotlib.pyplot as plt
 import time
 
@@ -72,6 +70,11 @@ while 1:
         
         exp_date = date
         
+        minute_timestamp = (pd.to_datetime(today).tz_localize("America/New_York") + timedelta(hours = pd.Timestamp("09:35").time().hour, minutes = pd.Timestamp("09:35").time().minute))
+        quote_timestamp = minute_timestamp.value
+        minute_after_timestamp = (pd.to_datetime(today).tz_localize("America/New_York") + timedelta(hours = pd.Timestamp("09:36").time().hour, minutes = pd.Timestamp("09:36").time().minute))
+        quote_minute_after_timestamp = minute_after_timestamp.value
+        
         if trend_regime == 0:
             
             side = "Call"
@@ -89,25 +92,36 @@ while 1:
             short_strike = short_call["strike_price"].iloc[0]
             long_strike = long_call["strike_price"].iloc[0]
             
-            short_call_ohlcv = pd.json_normalize(requests.get(f"https://api.polygon.io/v2/aggs/ticker/{short_call['ticker'].iloc[0]}/range/1/minute/{today}/{today}?adjusted=true&sort=asc&limit=1000&apiKey={polygon_api_key}").json()["results"]).set_index("t")
-            short_call_ohlcv.index = pd.to_datetime(short_call_ohlcv.index, unit = "ms", utc = True).tz_convert("America/New_York") 
+            short_call_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{short_call['ticker'].iloc[0]}?timestamp.gte={quote_timestamp}&timestamp.lt={quote_minute_after_timestamp}&order=asc&limit=5000&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            short_call_quotes.index = pd.to_datetime(short_call_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            short_call_quote = short_call_quotes.median(numeric_only=True).to_frame().copy().T
+            short_call_quote["mid_price"] = (short_call_quote["bid_price"] + short_call_quote["ask_price"]) / 2
+    
+            long_call_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{long_call['ticker'].iloc[0]}?timestamp.gte={quote_timestamp}&timestamp.lt={quote_minute_after_timestamp}&order=asc&limit=5000&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            long_call_quotes.index = pd.to_datetime(long_call_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            long_call_quote = long_call_quotes.median(numeric_only=True).to_frame().copy().T
+            long_call_quote["mid_price"] = (long_call_quote["bid_price"] + long_call_quote["ask_price"]) / 2
             
-            long_call_ohlcv = pd.json_normalize(requests.get(f"https://api.polygon.io/v2/aggs/ticker/{long_call['ticker'].iloc[0]}/range/1/minute/{today}/{today}?adjusted=true&sort=asc&limit=1000&apiKey={polygon_api_key}").json()["results"]).set_index("t")
-            long_call_ohlcv.index = pd.to_datetime(long_call_ohlcv.index, unit = "ms", utc = True).tz_convert("America/New_York") 
-            
-            spread = pd.concat([short_call_ohlcv.add_prefix("short_call_"), long_call_ohlcv.add_prefix("long_call_")], axis = 1).dropna()
-            spread = spread[spread.index.time >= pd.Timestamp("09:35").time()].copy()
-            spread["spread_value"] = spread["short_call_c"] - spread["long_call_c"]
+            spread_value = short_call_quote["mid_price"].iloc[0] - long_call_quote["mid_price"].iloc[0]
             
             underlying_data["distance_from_short_strike"] = round(((short_strike - underlying_data["c"]) / underlying_data["c"].iloc[0])*100, 2)
             
-            cost = spread["spread_value"].iloc[0]
-            final_value = spread["spread_value"].iloc[-1]
+            cost = spread_value
             
-            gross_pnl = cost - final_value
+            updated_short_call_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{short_call['ticker'].iloc[0]}?order=desc&limit=100&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            updated_short_call_quotes.index = pd.to_datetime(updated_short_call_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            updated_short_call_quotes["mid_price"] = (updated_short_call_quotes["bid_price"] + updated_short_call_quotes["ask_price"]) / 2
+            
+            updated_long_call_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{long_call['ticker'].iloc[0]}?order=desc&limit=100&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            updated_long_call_quotes.index = pd.to_datetime(updated_long_call_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            updated_long_call_quotes["mid_price"] = (updated_long_call_quotes["bid_price"] + updated_long_call_quotes["ask_price"]) / 2
+            
+            updated_spread_value = updated_short_call_quotes["mid_price"].iloc[0] - updated_long_call_quotes["mid_price"].iloc[0]
+            
+            gross_pnl = cost - updated_spread_value
             gross_pnl_percent = round((gross_pnl / cost)*100,2)
             
-            print(f"Live PnL: ${round(gross_pnl*100,2)} | {gross_pnl_percent}% | {spread.index[-1].strftime('%H:%M')}")
+            print(f"Live PnL: ${round(gross_pnl*100,2)} | {gross_pnl_percent}% | {updated_short_call_quotes.index[0].strftime('%H:%M')}")
             print(f"Side: {side} | Short Strike: {short_strike} | Long Strike: {long_strike} | % Away from strike: {underlying_data['distance_from_short_strike'].iloc[-1]}%")
             time.sleep(10)
             
@@ -127,26 +141,37 @@ while 1:
             
             short_strike = short_put["strike_price"].iloc[0]
             long_strike = long_put["strike_price"].iloc[0]
+            
+            short_put_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{short_put['ticker'].iloc[0]}?timestamp.gte={quote_timestamp}&timestamp.lt={quote_minute_after_timestamp}&order=asc&limit=5000&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            short_put_quotes.index = pd.to_datetime(short_put_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            short_put_quote = short_put_quotes.median(numeric_only=True).to_frame().copy().T
+            short_put_quote["mid_price"] = (short_put_quote["bid_price"] + short_put_quote["ask_price"]) / 2
     
-            short_put_ohlcv = pd.json_normalize(requests.get(f"https://api.polygon.io/v2/aggs/ticker/{short_put['ticker'].iloc[0]}/range/1/minute/{today}/{today}?adjusted=true&sort=asc&limit=1000&apiKey={polygon_api_key}").json()["results"]).set_index("t")
-            short_put_ohlcv.index = pd.to_datetime(short_put_ohlcv.index, unit = "ms", utc = True).tz_convert("America/New_York")   
+            long_put_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{long_put['ticker'].iloc[0]}?timestamp.gte={quote_timestamp}&timestamp.lt={quote_minute_after_timestamp}&order=asc&limit=5000&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            long_put_quotes.index = pd.to_datetime(long_put_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            long_put_quote = long_put_quotes.median(numeric_only=True).to_frame().copy().T
+            long_put_quote["mid_price"] = (long_put_quote["bid_price"] + long_put_quote["ask_price"]) / 2
             
-            long_put_ohlcv = pd.json_normalize(requests.get(f"https://api.polygon.io/v2/aggs/ticker/{long_put['ticker'].iloc[0]}/range/1/minute/{today}/{today}?adjusted=true&sort=asc&limit=1000&apiKey={polygon_api_key}").json()["results"]).set_index("t")
-            long_put_ohlcv.index = pd.to_datetime(long_put_ohlcv.index, unit = "ms", utc = True).tz_convert("America/New_York")
-            
-            spread = pd.concat([short_put_ohlcv.add_prefix("short_put_"), long_put_ohlcv.add_prefix("long_put_")], axis = 1).dropna()
-            spread = spread[spread.index.time >= pd.Timestamp("09:35").time()].copy()
-            spread["spread_value"] = spread["short_put_c"] - spread["long_put_c"]
+            spread_value = short_put_quote["mid_price"].iloc[0] - long_put_quote["mid_price"].iloc[0]
             
             underlying_data["distance_from_short_strike"] = round(((underlying_data["c"] - short_strike) / short_strike)*100, 2)
             
-            cost = spread["spread_value"].iloc[0]
-            final_value = spread["spread_value"].iloc[-1]
+            cost = spread_value
             
-            gross_pnl = cost - final_value
+            updated_short_put_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{short_put['ticker'].iloc[0]}?order=desc&limit=100&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            updated_short_put_quotes.index = pd.to_datetime(updated_short_put_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            updated_short_put_quotes["mid_price"] = (updated_short_put_quotes["bid_price"] + updated_short_put_quotes["ask_price"]) / 2
+            
+            updated_long_put_quotes = pd.json_normalize(requests.get(f"https://api.polygon.io/v3/quotes/{long_put['ticker'].iloc[0]}?order=desc&limit=100&sort=timestamp&apiKey={polygon_api_key}").json()["results"]).set_index("sip_timestamp")
+            updated_long_put_quotes.index = pd.to_datetime(updated_long_put_quotes.index, unit = "ns", utc = True).tz_convert("America/New_York")
+            updated_long_put_quotes["mid_price"] = (updated_long_put_quotes["bid_price"] + updated_long_put_quotes["ask_price"]) / 2
+            
+            updated_spread_value = updated_short_put_quotes["mid_price"].iloc[0] - updated_long_put_quotes["mid_price"].iloc[0]
+            
+            gross_pnl = cost - updated_spread_value
             gross_pnl_percent = round((gross_pnl / cost)*100,2)
         
-            print(f"\nLive PnL: ${round(gross_pnl*100,2)} | {gross_pnl_percent}% | {spread.index[-1].strftime('%H:%M')}")
+            print(f"\nLive PnL: ${round(gross_pnl*100,2)} | {gross_pnl_percent}% | {updated_short_put_quotes.index[0].strftime('%H:%M')}")
             print(f"Side: {side} | Short Strike: {short_strike} | Long Strike: {long_strike} | % Away from strike: {underlying_data['distance_from_short_strike'].iloc[-1]}%")
             
             time.sleep(10)
