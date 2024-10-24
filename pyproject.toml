@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "selling-volatility"
+version = "0.1.0"
+description = ""
+authors = ["Marwin Steiner <marwin.steiner@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+pandas = "^2.2.3"
+numpy = "^2.1.2"
+matplotlib = "^3.9.2"
+pandas-market-calendars = "^4.4.1"
+dynaconf = "^3.2.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
