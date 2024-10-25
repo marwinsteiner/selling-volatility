@@ -19,27 +19,24 @@ from pandas_market_calendars import get_calendar
 # Tastytrade Integration
 # =============================================================================
 
-# base_url = 'https://api.tastyworks.com'
-base_url = 'https://api.cert.tastyworks.com'
+base_url = 'https://api.tastyworks.com'
 
 # Authenticate session
 
-auth_url = 'https://api.cert.tastyworks.com/sessions'
+auth_url = 'https://api.tastyworks.com/sessions'
 headers = {'Content-Type': 'application/json'}
 
 session_data = {
     # Tastytrade email + pw
-    "login": "marwin.steiner@gmail.com",
-    "password": "#j53sonC@Yo5emAb",
+    "login": "your-tastytrade-email@email.com",
+    "password": "your-tastytrade-password",
     "remember-me": True
 }
 
 authentication_response = requests.post(auth_url, headers=headers, json=session_data)
 authentication_json = authentication_response.json()
-print(authentication_json)
 
 session_token = authentication_json["data"]["session-token"]
-print(session_token)
 authorized_header = {'Authorization': session_token}
 
 # End of authentication
@@ -50,8 +47,7 @@ accounts = requests.get(f"{base_url}/customers/me/accounts", headers={'Authoriza
 account_number = accounts["data"]["items"][0]["account"]["account-number"]
 
 balances = \
-    requests.get(f"{base_url}/accounts/{account_number}/balances", headers={'Authorization': session_token}).json()[
-        "data"]
+requests.get(f"{base_url}/accounts/{account_number}/balances", headers={'Authorization': session_token}).json()["data"]
 
 option_buying_power = np.float64(balances["derivative-buying-power"])
 print(f"Buying Power: ${option_buying_power}")
@@ -198,7 +194,7 @@ long_option_quote.index = pd.to_datetime(long_option_quote.index, unit="ns", utc
 
 natural_price = round(short_option_quote["bid_price"].iloc[0] - long_option_quote["ask_price"].iloc[0], 2)
 mid_price = round(((short_option_quote["bid_price"].iloc[0] + short_option_quote["ask_price"].iloc[0]) / 2) - (
-        (long_option_quote["bid_price"].iloc[0] + long_option_quote["ask_price"].iloc[0]) / 2), 2)
+            (long_option_quote["bid_price"].iloc[0] + long_option_quote["ask_price"].iloc[0]) / 2), 2)
 
 optimal_price = round(np.int64(round((mid_price - .05) / .05, 2)) * .05, 2)
 
@@ -228,7 +224,3 @@ validation_text = validate_order.text
 submit_order = requests.post(f"{base_url}/accounts/{account_number}/orders", json=order_details,
                              headers={'Authorization': session_token})
 order_submission_text = submit_order.text
-
-# TODO: Once this script works error free and submits the orders correctly to the sandbox, checkout a dev branch from
-#  master and continue development in the dev branch and treat the master branch as the production branch,
-#  which will connect to the hot tasty account.
