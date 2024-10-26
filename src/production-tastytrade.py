@@ -17,8 +17,18 @@ settings = Dynaconf(
     settings_files=['settings.json', '.secrets.json'],
 )
 
+ENVIRONMENT = 'sandbox'
+
 
 def get_session_token(environment: Literal['production', 'sandbox']):
+    """
+    The get_session_token function retrieves and stores a tastytrade session token depending on whether you want to
+    log into a sandbox or a production environment.
+
+    # Example usage
+    if token := get_session_token(environment='sandbox'):
+        print(f"Session token: {token}")
+    """
     with shelve.open(str(Path(settings.SESSION_SHELF_DIR) / 'session_data')) as db:
         session_token = db.get('session_token')
         token_expiry = db.get('token_expiry')
@@ -92,6 +102,16 @@ def get_session_token(environment: Literal['production', 'sandbox']):
                 return None
 
 
-# Example usage
-if token := get_session_token(environment='sandbox'):
-    print(f"Session token: {token}")
+def account_information_and_balances(session_token):
+    accounts = requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
+    settings.TASTY_PRODUCTION_BASE_URL}/customers/me/accounts", headers={'Authorization': session_token}).json()
+    account_number = accounts["data"]["items"][0]["account"]["account-number"]
+
+    balances = \
+        requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
+        settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/balances",
+                     headers={'Authorization': session_token}).json()[
+            "data"]
+
+    option_buying_power = np.float64(balances["derivative-buying-power"])
+    print(f"Buying Power: ${option_buying_power}")
