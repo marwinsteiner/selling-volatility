@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="created strategy_handbook.md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strategy_handbook.md" beforeDir="false" afterPath="$PROJECT_DIR$/strategy_handbook.md" afterDir="false" />
-    </list>
+    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="updated base url,  see TODOs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,5 +102,10 @@
     <MESSAGE value="initial reformat" />
     <MESSAGE value="created strategy_handbook.md" />
     <option name="LAST_COMMIT_MESSAGE" value="created strategy_handbook.md" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/selling_volatility$spread_production.coverage" NAME="spread-production Coverage Results" MODIFIED="1729863466495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/selling_volatility$spread_production_tastytrade.coverage" NAME="spread-production-tastytrade Coverage Results" MODIFIED="1729865801054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/selling_volatility$spread_backtest_settlement.coverage" NAME="spread-backtest-settlement Coverage Results" MODIFIED="1729774506154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
