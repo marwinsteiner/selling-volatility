@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="implemented getting the option chain">
+    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="implemented getting option quotes and submitting the order">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production-tastytrade.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/production-tastytrade.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,7 @@
       <workItem from="1729683374200" duration="667000" />
       <workItem from="1729764240668" duration="655000" />
       <workItem from="1729772152745" duration="1506000" />
-      <workItem from="1730030800314" duration="5227000" />
+      <workItem from="1730030800314" duration="6652000" />
     </task>
     <task id="LOCAL-00001" summary="initial reformat">
       <option name="closed" value="true" />
@@ -102,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730034081427</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="implemented getting option quotes and submitting the order">
+      <option name="closed" value="true" />
+      <created>1730036709157</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730036709157</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +143,8 @@
     <MESSAGE value="created strategy_handbook.md" />
     <MESSAGE value="implemented getting trading dates, getting vol regime, getting underlying regime, and calculating expected move" />
     <MESSAGE value="implemented getting the option chain" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented getting the option chain" />
+    <MESSAGE value="implemented getting option quotes and submitting the order" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented getting option quotes and submitting the order" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/selling_volatility$spread_production.coverage" NAME="spread-production Coverage Results" MODIFIED="1729863466495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

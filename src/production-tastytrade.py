@@ -336,3 +336,7 @@ def submit_order():
     settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/orders", json=order_details,
                                  headers={'Authorization': session_token})
     return submit_order.text
+
+
+if __name__ == '__main__':
+    submit_order()
