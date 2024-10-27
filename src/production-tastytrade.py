@@ -161,7 +161,7 @@ def get_underlying_regime(polygon_api_key):
     return big_underlying_data['regime'].iloc[-1]  # underlying regime
 
 
-def calculate_expected_move(index_price):
+def calculate_expected_move():
     # Calculate expected move
     ticker = "I:SPX"
     index_ticker = "I:VIX1D"
@@ -239,4 +239,36 @@ def calculate_expected_move(index_price):
         long_ticker_polygon = long_put["ticker"].iloc[0]
 
         return short_strike, long_strike, short_ticker_polygon, long_ticker_polygon
+
+
+def get_option_chain_data(session_token, short_strike, long_strike, trend_regime):
+    """
+    This function pulls the option chain from tasty. Sample usage:
+
+    # Call the function with the necessary parameters including trend_regime
+    trend_regime = get_underlying_regime(polygon_api_key=settings.POLYGON.API_KEY)
+    short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
+    short_ticker, long_ticker = get_option_chain_data(session_token, short_strike, long_strike, trend_regime)
+    """
+    global short_ticker, long_ticker
+    option_url = (f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox'
+    else settings.TASTY_PRODUCTION_BASE_URL}/option-chains/SPXW/nested")
+
+    option_chain = pd.json_normalize(
+        requests.get(option_url, headers={'Authorization': session_token}).json()["data"]["items"][0]["expirations"][0][
+            "strikes"])
+    option_chain["strike_price"] = option_chain["strike-price"].astype(float)
+
+    short_option = option_chain[option_chain["strike_price"] == short_strike].copy()
+    long_option = option_chain[option_chain["strike_price"] == long_strike].copy()
+
+    if trend_regime == 0:
+        short_ticker = short_option["call"].iloc[0]
+        long_ticker = long_option["call"].iloc[0]
+    elif trend_regime == 1:
+        short_ticker = short_option["put"].iloc[0]
+        long_ticker = long_option["put"].iloc[0]
+
+    return short_ticker, long_ticker
+
 
