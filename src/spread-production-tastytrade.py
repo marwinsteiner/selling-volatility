@@ -62,7 +62,7 @@ calendar = get_calendar("NYSE")
 trading_dates = calendar.schedule(start_date="2023-01-01",
                                   end_date=(datetime.today() + timedelta(days=1))).index.strftime("%Y-%m-%d").values
 
-date = trading_dates[-1]
+date = trading_dates[-1]  # bear in mind
 
 vix_data = pd.json_normalize(requests.get(
     f"https://api.polygon.io/v2/aggs/ticker/I:VIX1D/range/1/day/2023-05-01/{date}?sort=asc&limit=50000&apiKey={polygon_api_key}").json()[
