@@ -15,10 +15,12 @@ settings = Dynaconf(
     settings_files=['settings.json', '.secrets.json'],
 )
 
-ENVIRONMENT = 'sandbox'
+EnvironmentType = Literal['sandbox', 'production']  # create a type alias
+
+ENVIRONMENT: EnvironmentType = 'sandbox'
 
 
-def get_session_token(environment: Literal['production', 'sandbox']):
+def get_session_token(environment: EnvironmentType):
     """
     The get_session_token function retrieves and stores a tastytrade session token depending on whether you want to
     log into a sandbox or a production environment.
@@ -185,8 +187,10 @@ def calculate_expected_move():
                                        "results"]).set_index("t")
     index_data.index = pd.to_datetime(index_data.index, unit="ms", utc=True).tz_convert("America/New_York")
 
-    index_price = index_data[index_data.index.time >= pd.Timestamp("09:35").time()]["c"].iloc[0]
-    price = underlying_data[underlying_data.index.time >= pd.Timestamp("09:35").time()]["c"].iloc[0]
+    market_open = pd.Timestamp("09:35").time()
+
+    index_price = index_data[index_data.index.dt.time >= market_open]["c"].iloc[0]
+    price = underlying_data[underlying_data.index.dt.time >= market_open]["c"].iloc[0]
 
     expected_move = (round((index_price / np.sqrt(252)), 2) / 100) * .50  # expected move
 
@@ -278,14 +282,14 @@ def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
     short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
 
     short_option_quote = pd.json_normalize(requests.get(
-        f"https://api.polygon.io/v3/quotes/{short_ticker_polygon}?&sort=timestamp&order=desc&limit=10&apiKey={polygon_api_key}").json()[
-                                               "results"]).set_index("sip_timestamp").sort_index().tail(1)
+        f"https://api.polygon.io/v3/quotes/{short_ticker_polygon}?&sort=timestamp&order=desc&limit=10&apiKey="
+        f"{polygon_api_key}").json()["results"]).set_index("sip_timestamp").sort_index().tail(1)
     short_option_quote.index = pd.to_datetime(short_option_quote.index, unit="ns", utc=True).tz_convert(
         "America/New_York")
 
     long_option_quote = pd.json_normalize(requests.get(
-        f"https://api.polygon.io/v3/quotes/{long_ticker_polygon}?&sort=timestamp&order=desc&limit=10&apiKey={polygon_api_key}").json()[
-                                              "results"]).set_index("sip_timestamp").sort_index().tail(1)
+        f"https://api.polygon.io/v3/quotes/{long_ticker_polygon}?&sort=timestamp&order=desc&limit=10&apiKey="
+        f"{polygon_api_key}").json()["results"]).set_index("sip_timestamp").sort_index().tail(1)
     long_option_quote.index = pd.to_datetime(long_option_quote.index, unit="ns", utc=True).tz_convert(
         "America/New_York")
 
@@ -301,14 +305,14 @@ def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
 def submit_order():
     session_token = get_session_token(environment=ENVIRONMENT)
     account_number, option_buying_power = account_information_and_balances(session_token=session_token)
-    short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
+    vol_regime = get_vol_regime()  # Add this
     trend_regime = get_underlying_regime()
+    short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
     natural_price, mid_price, optimal_price = get_option_quotes()
     short_ticker, long_ticker = get_option_chain_data(session_token=session_token,
                                                       short_strike=short_strike,
                                                       long_strike=long_strike,
                                                       trend_regime=trend_regime)
-
     order_details = {
         "time-in-force": "Day",
         "order-type": "Limit",
