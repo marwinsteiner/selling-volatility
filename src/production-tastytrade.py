@@ -113,6 +113,8 @@ def account_information_and_balances(session_token):
     option_buying_power = np.float64(balances["derivative-buying-power"])
     print(f"Buying Power: ${option_buying_power}")
 
+    return account_number, option_buying_power
+
 
 def get_trading_dates():
     # Logic to get trading dates
@@ -127,7 +129,7 @@ def get_trading_dates():
     )
 
 
-def get_vol_regime(polygon_api_key):
+def get_vol_regime(polygon_api_key=settings.POLYGON.API_KEY):
     # Logic to fetch and process VIX data to get the vol regime
     date = get_trading_dates()[-1]
 
@@ -145,7 +147,7 @@ def get_vol_regime(polygon_api_key):
     return vix_data["vol_regime"].iloc[-1]  # vol regime
 
 
-def get_underlying_regime(polygon_api_key):
+def get_underlying_regime(polygon_api_key=settings.POLYGON.API_KEY):
     # Logic to fetch and process underlying data
     date = get_trading_dates()[-1]
 
@@ -265,10 +267,72 @@ def get_option_chain_data(session_token, short_strike, long_strike, trend_regime
     if trend_regime == 0:
         short_ticker = short_option["call"].iloc[0]
         long_ticker = long_option["call"].iloc[0]
+        return short_ticker, long_ticker
     elif trend_regime == 1:
         short_ticker = short_option["put"].iloc[0]
         long_ticker = long_option["put"].iloc[0]
+        return short_ticker, long_ticker
 
-    return short_ticker, long_ticker
+
+def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
+    short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
+
+    short_option_quote = pd.json_normalize(requests.get(
+        f"https://api.polygon.io/v3/quotes/{short_ticker_polygon}?&sort=timestamp&order=desc&limit=10&apiKey={polygon_api_key}").json()[
+                                               "results"]).set_index("sip_timestamp").sort_index().tail(1)
+    short_option_quote.index = pd.to_datetime(short_option_quote.index, unit="ns", utc=True).tz_convert(
+        "America/New_York")
+
+    long_option_quote = pd.json_normalize(requests.get(
+        f"https://api.polygon.io/v3/quotes/{long_ticker_polygon}?&sort=timestamp&order=desc&limit=10&apiKey={polygon_api_key}").json()[
+                                              "results"]).set_index("sip_timestamp").sort_index().tail(1)
+    long_option_quote.index = pd.to_datetime(long_option_quote.index, unit="ns", utc=True).tz_convert(
+        "America/New_York")
+
+    natural_price = round(short_option_quote["bid_price"].iloc[0] - long_option_quote["ask_price"].iloc[0], 2)
+    mid_price = round(((short_option_quote["bid_price"].iloc[0] + short_option_quote["ask_price"].iloc[0]) / 2) - (
+            (long_option_quote["bid_price"].iloc[0] + long_option_quote["ask_price"].iloc[0]) / 2), 2)
+
+    optimal_price = round(np.int64(round((mid_price - .05) / .05, 2)) * .05, 2)
+
+    return natural_price, mid_price, optimal_price
 
 
+def submit_order():
+    session_token = get_session_token(environment=ENVIRONMENT)
+    account_number, option_buying_power = account_information_and_balances(session_token=session_token)
+    short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
+    trend_regime = get_underlying_regime()
+    natural_price, mid_price, optimal_price = get_option_quotes()
+    short_ticker, long_ticker = get_option_chain_data(session_token=session_token,
+                                                      short_strike=short_strike,
+                                                      long_strike=long_strike,
+                                                      trend_regime=trend_regime)
+
+    order_details = {
+        "time-in-force": "Day",
+        "order-type": "Limit",
+        "price": optimal_price,
+        "price-effect": "Credit",
+        "legs": [{"action": "Buy to Open",
+                  "instrument-type": "Equity Option",
+                  "symbol": f"{long_ticker}",
+                  "quantity": 1},
+
+                 {"action": "Sell to Open",
+                  "instrument-type": "Equity Option",
+                  "symbol": f"{short_ticker}",
+                  "quantity": 1}]
+
+    }
+
+    # Do an order dry-run to make sure the trade will go through (i.e., verifies balance, valid symbol, etc. )
+
+    validate_order = requests.post(f"https://api.tastyworks.com/accounts/{account_number}/orders/dry-run",
+                                   json=order_details, headers={'Authorization': session_token})
+    print(validate_order.text)
+
+    submit_order = requests.post(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
+    settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/orders", json=order_details,
+                                 headers={'Authorization': session_token})
+    return submit_order.text
