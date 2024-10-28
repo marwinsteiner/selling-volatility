@@ -27,18 +27,23 @@ settings = Dynaconf(
 
 EnvironmentType = Literal['sandbox', 'production']  # create a type alias
 
+# ENVIRONMENT toggles between sandbox (testing) and production (live trading)
 ENVIRONMENT: EnvironmentType = 'sandbox'
 logger.info(f'Using environment: {ENVIRONMENT}')
 
 
 def get_session_token(environment: EnvironmentType):
     """
-    The get_session_token function retrieves and stores a tastytrade session token depending on whether you want to
-    log into a sandbox or a production environment.
+    Get or generate a session token based on the environment.
 
-    # Example usage
-    if token := get_session_token(environment='sandbox'):
-        print(f"Session token: {token}")
+    Args:
+        environment (str): The environment type ('sandbox' or 'production').
+
+    Returns:
+        str: The session token if found or generated, None if the request fails.
+
+    Examples:
+        session_token = get_session_token('sandbox')
     """
     with shelve.open(str(Path(settings.SESSION_SHELF_DIR) / 'session_data')) as db:
         session_token = db.get('session_token')
@@ -90,19 +95,31 @@ def get_session_token(environment: EnvironmentType):
 
 
 def account_information_and_balances(session_token):
+    """
+    Retrieve account information and balances using the provided session token.
+
+    Args:
+        session_token (str): The session token for authentication.
+
+    Returns:
+        tuple: A tuple containing the account number and option buying power.
+
+    Raises:
+        None
+    """
     accounts = requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
     settings.TASTY_PRODUCTION_BASE_URL}/customers/me/accounts", headers={'Authorization': session_token}).json()
     account_number = accounts["data"]["items"][0]["account"]["account-number"]
-    
+
     if accounts:
         logger.success(f'Retrieved account information for account {account_number} - a {ENVIRONMENT} account.')
     else:
         logger.warning(f'Unable to retrieve account information. Failed with error {accounts.text}.')
 
-    balances = requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' 
-        else settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/balances",
-        headers={'Authorization': session_token}).json()["data"]
-    
+    balances = requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox'
+    else settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/balances",
+                            headers={'Authorization': session_token}).json()["data"]
+
     if balances:
         logger.success(f'Retrieved account balances for account {account_number} - a {ENVIRONMENT} account.')
     else:
@@ -115,7 +132,15 @@ def account_information_and_balances(session_token):
 
 
 def get_trading_dates():
-    # Logic to get trading dates
+    """
+    Get the trading dates based on the NYSE calendar.
+
+    Returns:
+        numpy.ndarray: An array of trading dates in the format "%Y-%m-%d".
+
+    Raises:
+        None
+    """
     calendar = get_calendar('NYSE')
     return (
         calendar.schedule(
@@ -128,7 +153,18 @@ def get_trading_dates():
 
 
 def get_vol_regime(polygon_api_key=settings.POLYGON.API_KEY):
-    # Logic to fetch and process VIX data to get the vol regime
+    """
+    Get the volatility regime based on VIX data.
+
+    Args:
+        polygon_api_key (str): The API key for Polygon data (default is settings.POLYGON.API_KEY).
+
+    Returns:
+        int: The volatility regime based on the VIX data.
+
+    Raises:
+        None
+    """
     date = get_trading_dates()[-1]
 
     vix_data = pd.json_normalize(requests.get(
@@ -146,7 +182,18 @@ def get_vol_regime(polygon_api_key=settings.POLYGON.API_KEY):
 
 
 def get_underlying_regime(polygon_api_key=settings.POLYGON.API_KEY):
-    # Logic to fetch and process underlying data
+    """
+    Get the regime of the underlying asset based on historical data.
+
+    Args:
+        polygon_api_key (str): The API key for Polygon data (default is settings.POLYGON.API_KEY).
+
+    Returns:
+        int: The regime of the underlying asset based on historical data.
+
+    Raises:
+        None
+    """
     date = get_trading_dates()[-1]
 
     big_underlying_data = pd.json_normalize(requests.get(
@@ -163,7 +210,17 @@ def get_underlying_regime(polygon_api_key=settings.POLYGON.API_KEY):
 
 
 def calculate_expected_move():
-    # Calculate expected move
+    """
+    Calculate the expected move and generate options trading strategies based on the trend regime.
+
+    Returns:
+        tuple: For trend regime 0, returns short_strike, long_strike, short_ticker_polygon, long_ticker_polygon.
+               For trend regime 1, returns short_strike, long_strike, short_ticker_polygon, long_ticker_polygon.
+
+    Raises:
+        None
+    """
+
     ticker = "I:SPX"
     index_ticker = "I:VIX1D"
     options_ticker = "SPX"
@@ -253,12 +310,20 @@ def calculate_expected_move():
 
 def get_option_chain_data(session_token, short_strike, long_strike, trend_regime):
     """
-    This function pulls the option chain from tasty. Sample usage:
+    Retrieve option chain data based on the session token, strike prices, and trend regime.
 
-    # Call the function with the necessary parameters including trend_regime
-    trend_regime = get_underlying_regime(polygon_api_key=settings.POLYGON.API_KEY)
-    short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
-    short_ticker, long_ticker = get_option_chain_data(session_token, short_strike, long_strike, trend_regime)
+    Args:
+        session_token (str): The session token for authentication.
+        short_strike (float): The strike price for the short option.
+        long_strike (float): The strike price for the long option.
+        trend_regime (int): The trend regime value (0 for call-side, 1 for put-side).
+
+    Returns:
+        tuple: For trend regime 0, returns short_ticker, long_ticker for call-side.
+               For trend regime 1, returns short_ticker, long_ticker for put-side.
+
+    Raises:
+        None
     """
     global short_ticker, long_ticker
     option_url = (f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox'
@@ -298,6 +363,19 @@ def get_option_chain_data(session_token, short_strike, long_strike, trend_regime
 
 
 def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
+    """
+    Retrieve option quotes based on the calculated expected move.
+
+    Args:
+        polygon_api_key (str): The API key for Polygon data (default is settings.POLYGON.API_KEY).
+
+    Returns:
+        tuple: The natural price, mid-price, and optimal price of the option quotes.
+
+    Raises:
+        None
+    """
+
     short_strike, long_strike, short_ticker_polygon, long_ticker_polygon = calculate_expected_move()
 
     short_option_quote = pd.json_normalize(requests.get(
@@ -323,6 +401,15 @@ def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
 
 
 def submit_order():
+    """
+    Submit an options trading order based on the calculated parameters and session information.
+
+    Returns:
+        str: The response text indicating the status of the order submission.
+
+    Raises:
+        None
+    """
     session_token = get_session_token(environment=ENVIRONMENT)
     if not session_token:
         logger.warning('Failed to get valid session token.')
