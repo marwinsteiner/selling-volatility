@@ -10,6 +10,16 @@ from typing import Literal
 from pathlib import Path
 from loguru import logger
 
+# Set up a logging directory
+log_dir = Path(__file__).parent / 'logs'
+log_dir.mkdir(exist_ok=True)
+
+# Create log file path with timestamp
+log_file = log_dir / f"tastytrade_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+
+# Configure logger to write to both console and file
+logger.add(log_file, rotation="1 day")
+
 # Load settings and secrets
 settings = Dynaconf(
     settings_files=['settings.json', '.secrets.json'],
