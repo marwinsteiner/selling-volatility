@@ -8,6 +8,7 @@ from pandas_market_calendars import get_calendar
 from dynaconf import Dynaconf
 from typing import Literal
 from pathlib import Path
+from loguru import logger
 
 # Load settings and secrets
 settings = Dynaconf(
@@ -17,6 +18,7 @@ settings = Dynaconf(
 EnvironmentType = Literal['sandbox', 'production']  # create a type alias
 
 ENVIRONMENT: EnvironmentType = 'sandbox'
+logger.info(f'Using environment: {ENVIRONMENT}')
 
 
 def get_session_token(environment: EnvironmentType):
@@ -34,33 +36,33 @@ def get_session_token(environment: EnvironmentType):
 
         # Check if we have a valid token that hasn't expired
         if session_token and token_expiry and datetime.now() < token_expiry:
-            print("Using existing valid session token.")
-            print(f'Session Token: {session_token}')
-            print(f'Token Expiry: {token_expiry}')
+            logger.success('Found existing session token.', extra={'session_token': session_token})
+            logger.info(f'Existing session token will expire at {token_expiry}.')
             return session_token
 
     # If we get here, we either don't have a token or it's expired
+    logger.warning('Session token expired or invalid, generating new session token...')
     if environment == 'sandbox':
         url = f"{settings.TASTY_SANDBOX_BASE_URL}/sessions"
-        print(url)
+        logger.info(f'Using environment:{environment} with base url: {url}')
         payload = {
             "login": settings.TASTY_SANDBOX.USERNAME,
             "password": settings.TASTY_SANDBOX.PASSWORD
         }
-        print(payload)
     else:
         url = f"{settings.TASTY_PRODUCTION_BASE_URL}/sessions"
-        print(url)
+        logger.info(f'Using environment:{environment} with base url: {url}')
         payload = {
             "login": settings.TASTY_PRODUCTION.USERNAME,
             "password": settings.TASTY_PRODUCTION.PASSWORD
         }
-        print(payload)
-
+    logger.debug(f'Generated payload: {payload}')
     headers = {"Content-Type": "application/json"}
     response = requests.post(url, json=payload, headers=headers)
+    logger.info(f'Posted request: {response}')
 
     if response.status_code == 201:
+        logger.success(f'Response status code: {response.status_code}. Received session token.')
         data = response.json()
         new_session_token = data['data']['session-token']
         new_token_expiry = datetime.now() + timedelta(hours=24)
@@ -69,11 +71,11 @@ def get_session_token(environment: EnvironmentType):
         db['session_token'] = new_session_token
         db['token_expiry'] = new_token_expiry
 
-        print("New session token generated and saved.")
+        logger.success('Stored new session token and token expiry.')
         return new_session_token
     else:
-        print(f"Error: {response.status_code}")
-        print(response.text)
+        logger.error(f'Session token request failed with response code: {response.status_code}.')
+        logger.debug(f'{response.text}')
         return None
 
 
@@ -81,15 +83,23 @@ def account_information_and_balances(session_token):
     accounts = requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
     settings.TASTY_PRODUCTION_BASE_URL}/customers/me/accounts", headers={'Authorization': session_token}).json()
     account_number = accounts["data"]["items"][0]["account"]["account-number"]
+    
+    if accounts:
+        logger.success(f'Retrieved account information for account {account_number} - a {ENVIRONMENT} account.')
+    else:
+        logger.warning(f'Unable to retrieve account information. Failed with error {accounts.text}.')
 
-    balances = \
-        requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
-        settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/balances",
-                     headers={'Authorization': session_token}).json()[
-            "data"]
+    balances = requests.get(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' 
+        else settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/balances",
+        headers={'Authorization': session_token}).json()["data"]
+    
+    if balances:
+        logger.success(f'Retrieved account balances for account {account_number} - a {ENVIRONMENT} account.')
+    else:
+        logger.warning(f'Unable to retrieve balances. Failed with error {balances.text}')
 
     option_buying_power = np.float64(balances["derivative-buying-power"])
-    print(f"Buying Power: ${option_buying_power}")
+    logger.info(f"Option Buying Power: ${option_buying_power}")
 
     return account_number, option_buying_power
 
@@ -138,6 +148,7 @@ def get_underlying_regime(polygon_api_key=settings.POLYGON.API_KEY):
     big_underlying_data["3_mo_avg"] = big_underlying_data["c"].rolling(window=60).mean()
     big_underlying_data['regime'] = big_underlying_data.apply(lambda row: 1 if (row['c'] > row['1_mo_avg']) else 0,
                                                               axis=1)
+    logger.info('Retrieved and calculated underlying regime.')
     return big_underlying_data['regime'].iloc[-1]  # underlying regime
 
 
@@ -171,6 +182,8 @@ def calculate_expected_move():
 
     expected_move = (round((index_price / np.sqrt(252)), 2) / 100) * .50
 
+    logger.success('Calculated expected move.')
+
     exp_date = trading_date  # strictly speaking, this is unnecessary -- just for humans to understand.
 
     if trend_regime == 0:
@@ -191,6 +204,8 @@ def calculate_expected_move():
 
         short_strike = short_call["strike_price"].iloc[0]
         long_strike = long_call["strike_price"].iloc[0]
+
+        logger.info(f'Generated Call-Side Trade | Short: {short_strike} Long: {long_strike}')
 
         short_ticker_polygon = short_call["ticker"].iloc[0]
         long_ticker_polygon = long_call["ticker"].iloc[0]
@@ -218,6 +233,8 @@ def calculate_expected_move():
         short_strike = short_put["strike_price"].iloc[0]
         long_strike = long_put["strike_price"].iloc[0]
 
+        logger.info(f'Generated Put-Side Trade | Short: {short_strike} Long: {long_strike}')
+
         short_ticker_polygon = short_put["ticker"].iloc[0]
         long_ticker_polygon = long_put["ticker"].iloc[0]
 
@@ -242,16 +259,31 @@ def get_option_chain_data(session_token, short_strike, long_strike, trend_regime
             "strikes"])
     option_chain["strike_price"] = option_chain["strike-price"].astype(float)
 
+    logger.success('Retrieved nested option chain.')
+
     short_option = option_chain[option_chain["strike_price"] == short_strike].copy()
     long_option = option_chain[option_chain["strike_price"] == long_strike].copy()
 
     if trend_regime == 0:
         short_ticker = short_option["call"].iloc[0]
         long_ticker = long_option["call"].iloc[0]
+
+        if short_ticker and long_ticker:
+            logger.success('Retrieved call-side tickers.')
+        else:
+            logger.error('Failed to retrieve call-side tickers.')
+
         return short_ticker, long_ticker
+
     elif trend_regime == 1:
         short_ticker = short_option["put"].iloc[0]
         long_ticker = long_option["put"].iloc[0]
+
+        if short_ticker and long_ticker:
+            logger.success('Retrieved put-side tickers.')
+        else:
+            logger.error('Failed to retrieve put-side tickers.')
+
         return short_ticker, long_ticker
 
 
@@ -271,6 +303,7 @@ def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
         "America/New_York")
 
     natural_price = round(short_option_quote["bid_price"].iloc[0] - long_option_quote["ask_price"].iloc[0], 2)
+
     mid_price = round(((short_option_quote["bid_price"].iloc[0] + short_option_quote["ask_price"].iloc[0]) / 2) - (
             (long_option_quote["bid_price"].iloc[0] + long_option_quote["ask_price"].iloc[0]) / 2), 2)
 
@@ -282,7 +315,7 @@ def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
 def submit_order():
     session_token = get_session_token(environment=ENVIRONMENT)
     if not session_token:
-        print('Failed to get valid session token.')
+        logger.warning('Failed to get valid session token.')
         return
     account_number, option_buying_power = account_information_and_balances(session_token=session_token)
     vol_regime = get_vol_regime()  # Add this
@@ -315,11 +348,21 @@ def submit_order():
     validate_order = requests.post(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
     settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/orders/dry-run",
                                    json=order_details, headers={'Authorization': session_token})
-    print(validate_order.text)
+
+    if validate_order:
+        logger.success('Validated order, no issues in preflight.')
+    else:
+        logger.warning(f'Validate order failed with issue in preflight: {validate_order.text}')
 
     submit_order = requests.post(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
     settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/orders", json=order_details,
                                  headers={'Authorization': session_token})
+
+    if submit_order:
+        logger.success('Sent order.')
+    else:
+        logger.error(f'Failed to send order with error {submit_order.text}')
+
     return submit_order.text
 
 
