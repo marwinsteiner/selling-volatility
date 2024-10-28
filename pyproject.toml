@@ -13,6 +13,7 @@ numpy = "^2.1.2"
 matplotlib = "^3.9.2"
 pandas-market-calendars = "^4.4.1"
 dynaconf = "^3.2.6"
+loguru = "^0.7.2"
 
 
 [build-system]

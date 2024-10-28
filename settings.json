@@ -1,0 +1,5 @@
+{
+  "TASTY_SANDBOX_BASE_URL": "https://api.cert.tastyworks.com",
+  "TASTY_PRODUCTION_BASE_URL": "https://api.tastyworks.com",
+  "SESSION_SHELF_DIR": "C:\\Users\\marwi\\PycharmProjects\\selling-volatility\\session_shelf"
+}
