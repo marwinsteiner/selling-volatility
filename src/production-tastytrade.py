@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import json
 import requests
 import shelve
 
@@ -33,72 +32,49 @@ def get_session_token(environment: EnvironmentType):
         session_token = db.get('session_token')
         token_expiry = db.get('token_expiry')
 
+        # Check if we have a valid token that hasn't expired
         if session_token and token_expiry and datetime.now() < token_expiry:
             print("Using existing valid session token.")
+            print(f'Session Token: {session_token}')
+            print(f'Token Expiry: {token_expiry}')
             return session_token
 
-        environment = environment
+    # If we get here, we either don't have a token or it's expired
+    if environment == 'sandbox':
+        url = f"{settings.TASTY_SANDBOX_BASE_URL}/sessions"
+        print(url)
+        payload = {
+            "login": settings.TASTY_SANDBOX.USERNAME,
+            "password": settings.TASTY_SANDBOX.PASSWORD
+        }
+        print(payload)
+    else:
+        url = f"{settings.TASTY_PRODUCTION_BASE_URL}/sessions"
+        print(url)
+        payload = {
+            "login": settings.TASTY_PRODUCTION.USERNAME,
+            "password": settings.TASTY_PRODUCTION.PASSWORD
+        }
+        print(payload)
 
-        if environment == 'sandbox':
-            url = settings.TASTY_SANDBOX_BASE_URL
-            url += "/sessions"
+    headers = {"Content-Type": "application/json"}
+    response = requests.post(url, json=payload, headers=headers)
 
-            payload = {
-                "login": settings.TASTY_SANDBOX.USERNAME,
-                "password": settings.TASTY_SANDBOX.PASSWORD
-            }
+    if response.status_code == 201:
+        data = response.json()
+        new_session_token = data['data']['session-token']
+        new_token_expiry = datetime.now() + timedelta(hours=24)
 
-            headers = {
-                "Content-Type": "application/json"
-            }
+        # Store the new token and expiry
+        db['session_token'] = new_session_token
+        db['token_expiry'] = new_token_expiry
 
-            response = requests.post(url, data=json.dumps(payload), headers=headers)
-
-            if response.status_code == 201:
-                data = response.json()
-                new_session_token = data['data']['session-token']
-                new_token_expiry = datetime.now() + timedelta(hours=24)
-
-                # Store the new token and expiry
-                db['session_token'] = new_session_token
-                db['token_expiry'] = new_token_expiry
-
-                print("New session token generated and saved.")
-                return new_session_token
-            else:
-                print(f"Error: {response.status_code}")
-                print(response.text)
-                return None
-        else:
-            url = settings.TASTY_PRODUCTION_BASE_URL
-            url += "/sessions"
-
-            payload = {
-                "login": settings.TASTY_PRODUCTION.USERNAME,
-                "password": settings.TASTY_PRODUCTION.PASSWORD
-            }
-
-            headers = {
-                "Content-Type": "application/json"
-            }
-
-            response = requests.post(url, data=json.dumps(payload), headers=headers)
-
-            if response.status_code == 201:
-                data = response.json()
-                new_session_token = data['data']['session-token']
-                new_token_expiry = datetime.now() + timedelta(hours=24)
-
-                # Store the new token and expiry
-                db['session_token'] = new_session_token
-                db['token_expiry'] = new_token_expiry
-
-                print("New session token generated and saved.")
-                return new_session_token
-            else:
-                print(f"Error: {response.status_code}")
-                print(response.text)
-                return None
+        print("New session token generated and saved.")
+        return new_session_token
+    else:
+        print(f"Error: {response.status_code}")
+        print(response.text)
+        return None
 
 
 def account_information_and_balances(session_token):
@@ -189,10 +165,11 @@ def calculate_expected_move():
 
     market_open = pd.Timestamp("09:35").time()
 
-    index_price = index_data[index_data.index.dt.time >= market_open]["c"].iloc[0]
-    price = underlying_data[underlying_data.index.dt.time >= market_open]["c"].iloc[0]
+    # Remove .dt since we're working with a DatetimeIndex
+    index_price = index_data[index_data.index.time >= market_open]["c"].iloc[0]
+    price = underlying_data[underlying_data.index.time >= market_open]["c"].iloc[0]
 
-    expected_move = (round((index_price / np.sqrt(252)), 2) / 100) * .50  # expected move
+    expected_move = (round((index_price / np.sqrt(252)), 2) / 100) * .50
 
     exp_date = trading_date  # strictly speaking, this is unnecessary -- just for humans to understand.
 
@@ -304,6 +281,9 @@ def get_option_quotes(polygon_api_key=settings.POLYGON.API_KEY):
 
 def submit_order():
     session_token = get_session_token(environment=ENVIRONMENT)
+    if not session_token:
+        print('Failed to get valid session token.')
+        return
     account_number, option_buying_power = account_information_and_balances(session_token=session_token)
     vol_regime = get_vol_regime()  # Add this
     trend_regime = get_underlying_regime()
@@ -332,7 +312,8 @@ def submit_order():
 
     # Do an order dry-run to make sure the trade will go through (i.e., verifies balance, valid symbol, etc. )
 
-    validate_order = requests.post(f"https://api.tastyworks.com/accounts/{account_number}/orders/dry-run",
+    validate_order = requests.post(f"{settings.TASTY_SANDBOX_BASE_URL if ENVIRONMENT == 'sandbox' else
+    settings.TASTY_PRODUCTION_BASE_URL}/accounts/{account_number}/orders/dry-run",
                                    json=order_details, headers={'Authorization': session_token})
     print(validate_order.text)
 
