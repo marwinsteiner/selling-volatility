@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="updated shelve accessing + logging for privacy">
+    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="added market open check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production-tastytrade.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/production-tastytrade.py" afterDir="false" />
     </list>
@@ -149,7 +149,7 @@
       <workItem from="1729764240668" duration="655000" />
       <workItem from="1729772152745" duration="1506000" />
       <workItem from="1730030800314" duration="34857000" />
-      <workItem from="1730159235604" duration="7492000" />
+      <workItem from="1730159235604" duration="11892000" />
     </task>
     <task id="LOCAL-00001" summary="initial reformat">
       <option name="closed" value="true" />
@@ -263,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730212534882</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added market open check">
+      <option name="closed" value="true" />
+      <created>1730221136032</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730221136032</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +334,8 @@
     <MESSAGE value="log file and directory setup" />
     <MESSAGE value="added docstrings" />
     <MESSAGE value="updated shelve accessing + logging for privacy" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated shelve accessing + logging for privacy" />
+    <MESSAGE value="added market open check" />
+    <option name="LAST_COMMIT_MESSAGE" value="added market open check" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/selling_volatility$spread_production_tastytrade.coverage" NAME="spread-production-tastytrade Coverage Results" MODIFIED="1729865801054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
