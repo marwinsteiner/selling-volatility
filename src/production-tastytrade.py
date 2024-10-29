@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import requests
 import shelve
+import pytz
 
 from datetime import datetime, timedelta
 from pandas_market_calendars import get_calendar
@@ -152,6 +153,19 @@ def get_trading_dates():
         .index.strftime("%Y-%m-%d")
         .values
     )
+
+
+def is_market_open():
+    """Check if the market is open."""
+    et_tz = pytz.timezone('America/New York')
+    current_time = datetime.now(pytz.UTC).astimezone(et_tz)
+    market_open = current_time.replace(hour=9, minute=30, second=0, microsecond=0)
+
+    # Debug logging
+    logger.info(f"Current ET time: {current_time.strftime('%H:%M:%S')}")
+    logger.info(f"Market open time: {market_open.strftime('%H:%M:%S')}")
+
+    return current_time.time() >= market_open.time()
 
 
 def get_vol_regime(polygon_api_key=settings.POLYGON.API_KEY):
@@ -466,4 +480,7 @@ def submit_order():
 
 
 if __name__ == '__main__':
-    submit_order()
+    if is_market_open():
+        submit_order()
+    else:
+        logger.debug('Awaiting market open.')
