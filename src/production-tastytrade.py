@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import requests
 import shelve
+import pytz
+import time
 
 from datetime import datetime, timedelta
 from pandas_market_calendars import get_calendar
@@ -152,6 +154,23 @@ def get_trading_dates():
         .index.strftime("%Y-%m-%d")
         .values
     )
+
+
+def is_market_open():
+    """Check if it's exactly market open (09:30 ET)"""
+    et_tz = pytz.timezone('America/New_York')
+    current_time = datetime.now(pytz.UTC).astimezone(et_tz)
+    market_open = current_time.replace(hour=9, minute=30, second=0, microsecond=0)
+
+    # Debug logging
+    logger.info(f"Current ET time: {current_time.strftime('%H:%M:%S')}")
+    logger.info(f"Market open time: {market_open.strftime('%H:%M:%S')}")
+
+    # Get time difference in minutes
+    time_diff = (current_time - market_open).total_seconds() / 60
+
+    # Consider it market open if within 1 minute window
+    return -0.5 <= time_diff <= 0.5
 
 
 def get_vol_regime(polygon_api_key=settings.POLYGON.API_KEY):
@@ -466,4 +485,13 @@ def submit_order():
 
 
 if __name__ == '__main__':
-    submit_order()
+    while True:
+        if is_market_open():
+            logger.info("Market is open - executing market open tasks")
+        elif datetime.now(pytz.timezone('America/New_York')).time() >= pd.Timestamp("09:36").time():
+            logger.info("Trading time reached - executing trading tasks")
+            submit_order()
+        else:
+            logger.info("Waiting for market open...")
+            time.sleep(30)  # Check every 30 seconds
+
