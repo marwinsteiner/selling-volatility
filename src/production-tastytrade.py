@@ -28,7 +28,7 @@ settings = Dynaconf(
 EnvironmentType = Literal['sandbox', 'production']  # create a type alias
 
 # ENVIRONMENT toggles between sandbox (testing) and production (live trading)
-ENVIRONMENT: EnvironmentType = 'sandbox'
+ENVIRONMENT: EnvironmentType = 'production'
 logger.info(f'Using environment: {ENVIRONMENT}')
 
 
@@ -71,7 +71,7 @@ def get_session_token(environment: EnvironmentType):
             "login": settings.TASTY_PRODUCTION.USERNAME,
             "password": settings.TASTY_PRODUCTION.PASSWORD
         }
-    logger.debug(f'Generated payload: {payload}')
+    logger.debug('Generated payload.')
     headers = {"Content-Type": "application/json"}
     response = requests.post(url, json=payload, headers=headers)
     logger.info(f'Posted request: {response}')
@@ -81,12 +81,14 @@ def get_session_token(environment: EnvironmentType):
         data = response.json()
         new_session_token = data['data']['session-token']
         new_token_expiry = datetime.now() + timedelta(hours=24)
+        logger.debug(f'Saved new session token expiring at: {new_token_expiry}.')
 
-        # Store the new token and expiry
-        db['session_token'] = new_session_token
-        db['token_expiry'] = new_token_expiry
+        # Open a new shelf connection to store the token
+        with shelve.open(str(Path(settings.SESSION_SHELF_DIR) / 'session_data')) as db:
+            db['session_token'] = new_session_token
+            db['token_expiry'] = new_token_expiry
+            logger.success('Stored new session token and token expiry.')
 
-        logger.success('Stored new session token and token expiry.')
         return new_session_token
     else:
         logger.error(f'Session token request failed with response code: {response.status_code}.')
