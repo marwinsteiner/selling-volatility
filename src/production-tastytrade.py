@@ -491,6 +491,7 @@ if __name__ == '__main__':
         elif datetime.now(pytz.timezone('America/New_York')).time() >= pd.Timestamp("09:36").time():
             logger.info("Trading time reached - executing trading tasks")
             submit_order()
+            break
         else:
             logger.info("Waiting for market open...")
             time.sleep(30)  # Check every 30 seconds
