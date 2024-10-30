@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="updated market hours checking">
+    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="added account_streamer.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production-tastytrade.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/production-tastytrade.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marwi\PycharmProjects\selling-volatility\docs" />
+      <recent name="C:\Users\marwi\PycharmProjects\selling-volatility\src\backtest" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.spread-production">
     <configuration name="production-tastytrade" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="selling-volatility" />
@@ -149,7 +154,7 @@
       <workItem from="1729764240668" duration="655000" />
       <workItem from="1729772152745" duration="1506000" />
       <workItem from="1730030800314" duration="34857000" />
-      <workItem from="1730159235604" duration="17016000" />
+      <workItem from="1730159235604" duration="18935000" />
     </task>
     <task id="LOCAL-00001" summary="initial reformat">
       <option name="closed" value="true" />
@@ -279,7 +284,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730240877932</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="need to break after submitting order!">
+      <option name="closed" value="true" />
+      <created>1730296930888</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730296930888</updated>
+    </task>
+    <task id="LOCAL-00018" summary="file tree cleanup">
+      <option name="closed" value="true" />
+      <created>1730325710525</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730325710525</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added account_streamer.py">
+      <option name="closed" value="true" />
+      <created>1730325772891</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730325772891</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +373,10 @@
     <MESSAGE value="updated shelve accessing + logging for privacy" />
     <MESSAGE value="added market open check" />
     <MESSAGE value="updated market hours checking" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated market hours checking" />
+    <MESSAGE value="need to break after submitting order!" />
+    <MESSAGE value="file tree cleanup" />
+    <MESSAGE value="added account_streamer.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added account_streamer.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/selling_volatility$spread_production_tastytrade.coverage" NAME="spread-production-tastytrade Coverage Results" MODIFIED="1729865801054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
