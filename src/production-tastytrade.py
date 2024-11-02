@@ -30,7 +30,7 @@ settings = Dynaconf(
 EnvironmentType = Literal['sandbox', 'production']  # create a type alias
 
 # ENVIRONMENT toggles between sandbox (testing) and production (live trading)
-ENVIRONMENT: EnvironmentType = 'production'
+ENVIRONMENT: EnvironmentType = 'sandbox'
 logger.info(f'Using environment: {ENVIRONMENT}')
 
 
@@ -492,7 +492,13 @@ if __name__ == '__main__':
             logger.info("Trading time reached - executing trading tasks")
             submit_order()
             break
+        elif ENVIRONMENT == 'sandbox':
+            """
+            Sandbox orders are always sent, since they are not connected to any real money and are not dependent on 
+            market hours, and are strictly for testing purposes.
+            """
+            submit_order()
+            break
         else:
             logger.info("Waiting for market open...")
             time.sleep(30)  # Check every 30 seconds
-
