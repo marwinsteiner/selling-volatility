@@ -50,7 +50,7 @@ class AccountManager:
             connect_message = {
                 "action": "connect",
                 "value": [settings.ACCOUNT_NUMBER],
-                "auth-token": await self.get_session_token(),
+                "auth-token": await self.get_session_token(environment=self.ENVIRONMENT),
                 "request-id": 1
             }
             await websocket.send(json.dumps(connect_message))
@@ -194,7 +194,7 @@ class AccountManager:
         logger.warning('Session token expired or invalid, generating new session token...')
 
         # Prepare request parameters based on environment
-        if self == 'sandbox':
+        if self.ENVIRONMENT == 'sandbox':
             url = f"{settings.TASTY_SANDBOX_BASE_URL}/sessions"
             logger.info(f'Using environment:{self} with base url: {url}')
             payload = {
