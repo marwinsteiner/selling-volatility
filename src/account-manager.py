@@ -50,6 +50,9 @@ class AccountManager:
             connect_message = {
                 "action": "connect",
                 "value": [settings.ACCOUNT_NUMBER],
+                # TODO: change ACCOUNT_NUMBER such that it takes whatever account number is given back in the request
+                #  for authentication. Means modify authentication to retrieve this and write to variable
+                #  account_number.
                 "auth-token": await self.get_session_token(environment=self.ENVIRONMENT),
                 "request-id": 1
             }

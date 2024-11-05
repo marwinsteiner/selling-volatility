@@ -1,5 +1,7 @@
 {
   "TASTY_SANDBOX_BASE_URL": "https://api.cert.tastyworks.com",
   "TASTY_PRODUCTION_BASE_URL": "https://api.tastyworks.com",
-  "SESSION_SHELF_DIR": "C:\\Users\\marwi\\PycharmProjects\\selling-volatility\\session_shelf"
+  "SESSION_SHELF_DIR": "C:\\Users\\marwi\\PycharmProjects\\selling-volatility\\session_shelf",
+  "MONGO_URI": "mongodb://localhost:27017",
+  "MONGO_DATABASE": "trading_metrics"
 }

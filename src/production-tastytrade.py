@@ -30,7 +30,7 @@ settings = Dynaconf(
 EnvironmentType = Literal['sandbox', 'production']  # create a type alias
 
 # ENVIRONMENT toggles between sandbox (testing) and production (live trading)
-ENVIRONMENT: EnvironmentType = 'sandbox'
+ENVIRONMENT: EnvironmentType = 'production'
 logger.info(f'Using environment: {ENVIRONMENT}')
 
 
