@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="added account_monitor_design.md">
+    <list default="true" id="1728b123-f064-4bc8-9268-077eb1f560ed" name="Changes" comment="updated dependencies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account_streamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/account_monitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/production-tastytrade.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/production-tastytrade.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="development" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -36,12 +49,14 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.account-manager.executor&quot;: &quot;Run&quot;,
     &quot;Python.production-tastytrade.executor&quot;: &quot;Run&quot;,
     &quot;Python.spread-production.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marwi/PycharmProjects/halloween-sugar-futures&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marwi/PycharmProjects/selling-volatility&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -56,7 +71,30 @@
       <recent name="C:\Users\marwi\PycharmProjects\selling-volatility\src\backtest" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.spread-production">
+  <component name="RunManager" selected="Python.production-tastytrade">
+    <configuration name="account-manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="selling-volatility" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/account-manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="production-tastytrade" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="selling-volatility" />
       <option name="ENV_FILES" value="" />
@@ -103,6 +141,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="selling-volatility" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="selling-volatility" />
       <option name="ENV_FILES" value="" />
@@ -128,8 +189,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.spread-production" />
         <item itemvalue="Python.production-tastytrade" />
+        <item itemvalue="Python.spread-production" />
+        <item itemvalue="Python.account-manager" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -159,6 +222,17 @@
       <workItem from="1730030800314" duration="34857000" />
       <workItem from="1730159235604" duration="25647000" />
       <workItem from="1730466511044" duration="4229000" />
+      <workItem from="1730493883575" duration="10841000" />
+      <workItem from="1730563376002" duration="156000" />
+      <workItem from="1730568028728" duration="1400000" />
+      <workItem from="1730583097656" duration="1554000" />
+      <workItem from="1730725505383" duration="5585000" />
+      <workItem from="1730816582951" duration="3411000" />
+      <workItem from="1730902848622" duration="1362000" />
+      <workItem from="1730930993728" duration="255000" />
+      <workItem from="1731075494235" duration="1472000" />
+      <workItem from="1731084404901" duration="2938000" />
+      <workItem from="1731087767854" duration="2769000" />
     </task>
     <task id="LOCAL-00001" summary="initial reformat">
       <option name="closed" value="true" />
@@ -320,7 +394,39 @@
       <option name="project" value="LOCAL" />
       <updated>1730327899878</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="implemented the account manager, working on allowing the account manager and the strategy script to work together -- dev continues during market hours.">
+      <option name="closed" value="true" />
+      <created>1730554806746</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730554806747</updated>
+    </task>
+    <task id="LOCAL-00022" summary="get session token cleanup">
+      <option name="closed" value="true" />
+      <created>1730631773346</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730631773346</updated>
+    </task>
+    <task id="LOCAL-00023" summary="see todos">
+      <option name="closed" value="true" />
+      <created>1730821471887</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730821471887</updated>
+    </task>
+    <task id="LOCAL-00024" summary="updated dependencies">
+      <option name="closed" value="true" />
+      <created>1731085838129</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1731085838129</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +441,11 @@
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -378,7 +489,6 @@
     <MESSAGE value="added main block" />
     <MESSAGE value="minor cleanup" />
     <MESSAGE value="adjusted link in the order dry run as this was incorrect, adjusted authorization" />
-    <MESSAGE value="updated dependencies" />
     <MESSAGE value="added comprehensive logging" />
     <MESSAGE value="log file and directory setup" />
     <MESSAGE value="added docstrings" />
@@ -389,13 +499,19 @@
     <MESSAGE value="file tree cleanup" />
     <MESSAGE value="added account_streamer.py" />
     <MESSAGE value="added account_monitor_design.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="added account_monitor_design.md" />
+    <MESSAGE value="implemented the account manager, working on allowing the account manager and the strategy script to work together -- dev continues during market hours." />
+    <MESSAGE value="get session token cleanup" />
+    <MESSAGE value="see todos" />
+    <MESSAGE value="updated dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated dependencies" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/selling_volatility$account_manager.coverage" NAME="account-manager Coverage Results" MODIFIED="1730821303376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/selling_volatility$spread_production_tastytrade.coverage" NAME="spread-production-tastytrade Coverage Results" MODIFIED="1729865801054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/selling_volatility$spread_production.coverage" NAME="spread-production Coverage Results" MODIFIED="1730470292763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/selling_volatility$spread_production.coverage" NAME="spread-production Coverage Results" MODIFIED="1731076313875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/selling_volatility$test.coverage" NAME="test Coverage Results" MODIFIED="1730210511207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/selling_volatility$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1730494388177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/selling_volatility$spread_backtest_settlement.coverage" NAME="spread-backtest-settlement Coverage Results" MODIFIED="1729774506154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/selling_volatility$production_tastytrade.coverage" NAME="production-tastytrade Coverage Results" MODIFIED="1730468042247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/selling_volatility$production_tastytrade.coverage" NAME="production-tastytrade Coverage Results" MODIFIED="1731088813592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

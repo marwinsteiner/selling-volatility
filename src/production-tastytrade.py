@@ -11,6 +11,7 @@ from dynaconf import Dynaconf
 from typing import Literal
 from pathlib import Path
 from loguru import logger
+import schedule
 
 # Set up a logging directory
 log_dir = Path(__file__).parent / 'logs'
@@ -30,7 +31,7 @@ settings = Dynaconf(
 EnvironmentType = Literal['sandbox', 'production']  # create a type alias
 
 # ENVIRONMENT toggles between sandbox (testing) and production (live trading)
-ENVIRONMENT: EnvironmentType = 'sandbox'
+ENVIRONMENT: EnvironmentType = 'production'
 logger.info(f'Using environment: {ENVIRONMENT}')
 
 
@@ -156,23 +157,6 @@ def get_trading_dates():
     )
 
 
-def is_market_open():
-    """Check if it's exactly market open (09:30 ET)"""
-    et_tz = pytz.timezone('America/New_York')
-    current_time = datetime.now(pytz.UTC).astimezone(et_tz)
-    market_open = current_time.replace(hour=9, minute=30, second=0, microsecond=0)
-
-    # Debug logging
-    logger.info(f"Current ET time: {current_time.strftime('%H:%M:%S')}")
-    logger.info(f"Market open time: {market_open.strftime('%H:%M:%S')}")
-
-    # Get time difference in minutes
-    time_diff = (current_time - market_open).total_seconds() / 60
-
-    # Consider it market open if within 1 minute window
-    return -0.5 <= time_diff <= 0.5
-
-
 def get_vol_regime(polygon_api_key=settings.POLYGON.API_KEY):
     """
     Get the volatility regime based on VIX data.
@@ -215,7 +199,7 @@ def get_underlying_regime(polygon_api_key=settings.POLYGON.API_KEY):
     Raises:
         None
     """
-    date = get_trading_dates()[-1]
+    date = ()[-1]
 
     big_underlying_data = pd.json_normalize(requests.get(
         f"https://api.polygon.io/v2/aggs/ticker/SPY/range/1/day/2020-01-01/{date}"
@@ -484,21 +468,57 @@ def submit_order():
     return submit_order.text
 
 
+def should_execute_trade():
+    """
+    Determine if we should execute the trade based on environment and market conditions
+    """
+    et_tz = pytz.timezone('America/New_York')
+    current_time = datetime.now(pytz.UTC).astimezone(et_tz)
+
+    # If in sandbox, always allow trading
+    if ENVIRONMENT == 'sandbox':
+        logger.info("Sandbox environment - proceeding with trade")
+        return True
+
+    # Check if it's a trading day
+    nyse = get_calendar('NYSE')
+    today = current_time.strftime('%Y-%m-%d')
+    is_trading_day = len(nyse.schedule(start_date=today, end_date=today)) > 0
+
+    if not is_trading_day:
+        logger.info("Not a trading day - skipping trade")
+        return False
+
+    logger.info("Trading day confirmed - proceeding with trade")
+    return True
+
+
+def trading_job():
+    """
+    The job that will be executed at the scheduled time
+    """
+    logger.info("Starting scheduled trading job")
+    if should_execute_trade():
+        try:
+            result = submit_order()
+            logger.info(f"Order submission result: {result}")
+        except Exception as e:
+            logger.error(f"Error executing trade: {str(e)}")
+    else:
+        logger.info("Skipping trade execution based on conditions")
+
+
 if __name__ == '__main__':
+    # Schedule the job for 09:36 ET every day
+    schedule.every().day.at("09:36").do(trading_job)
+
+    # Log initial scheduling
+    et_tz = pytz.timezone('America/New_York')
+    current_time = datetime.now(pytz.UTC).astimezone(et_tz)
+    logger.info(f"Current time (ET): {current_time.strftime('%H:%M:%S')}")
+    logger.info("Trading scheduler initialized - will execute at 09:36 ET each day")
+
+    # Keep the script running
     while True:
-        if is_market_open():
-            logger.info("Market is open - executing market open tasks")
-        elif datetime.now(pytz.timezone('America/New_York')).time() >= pd.Timestamp("09:36").time():
-            logger.info("Trading time reached - executing trading tasks")
-            submit_order()
-            break
-        elif ENVIRONMENT == 'sandbox':
-            """
-            Sandbox orders are always sent, since they are not connected to any real money and are not dependent on 
-            market hours, and are strictly for testing purposes.
-            """
-            submit_order()
-            break
-        else:
-            logger.info("Waiting for market open...")
-            time.sleep(30)  # Check every 30 seconds
+        schedule.run_pending()
+        time.sleep(1)
