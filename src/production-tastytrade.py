@@ -4,6 +4,8 @@ import requests
 import shelve
 import pytz
 import time
+import schedule
+import smtplib
 
 from datetime import datetime, timedelta
 from pandas_market_calendars import get_calendar
@@ -11,7 +13,8 @@ from dynaconf import Dynaconf
 from typing import Literal
 from pathlib import Path
 from loguru import logger
-import schedule
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 # Set up a logging directory
 log_dir = Path(__file__).parent / 'logs'
@@ -493,17 +496,98 @@ def should_execute_trade():
     return True
 
 
+def send_execution_email(log_contents: str):
+    """
+    Send an email with the execution results and log contents.
+
+    Args:
+        log_contents (str): The contents of the log file to be included in the email
+    """
+    # Email configuration
+    sender_email = settings.EMAIL.SENDER
+    sender_password = settings.EMAIL.SENDER_PASSWORD
+    receiver_email = settings.EMAIL.RECEIVER
+
+    # Create the email message
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg[
+        'Subject'] = f"0-DTE SPX Cr. Spread Script Execution Report - {datetime.now().strftime('%Y-%m-%d '
+                                                                                               '%H:%M:%S ET')}"
+
+    # Email body
+    body = f"""
+    Trading Script Execution Report
+    =============================
+    Execution Time: {datetime.now(pytz.timezone('America/New_York')).strftime('%Y-%m-%d %H:%M:%S ET')}
+    Environment: {ENVIRONMENT}
+
+    Log Contents:
+    -------------
+    {log_contents}
+    """
+
+    msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        # Create server connection
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+
+        # Login and send email
+        server.login(sender_email, sender_password)
+        server.send_message(msg)
+
+        logger.success("Execution report email sent successfully")
+        server.quit()
+    except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
+
+
+def get_todays_logs() -> str:
+    """
+    Retrieve the contents of today's log file.
+
+    Returns:
+        str: The contents of today's log file
+    """
+    try:
+        # Get today's log file
+        log_files = list(log_dir.glob(f"tastytrade_{datetime.now().strftime('%Y%m%d')}*.log"))
+        if not log_files:
+            return "No log file found for today"
+
+        # Get the most recent log file for today
+        latest_log = max(log_files, key=lambda x: x.stat().st_mtime)
+
+        # Read and return the contents
+        with open(latest_log, 'r') as f:
+            return f.read()
+    except Exception as e:
+        return f"Error reading log file: {str(e)}"
+
+
 def trading_job():
     """
-    The job that will be executed at the scheduled time
+    Main trading job that will be scheduled
     """
     logger.info("Starting scheduled trading job")
+
     if should_execute_trade():
         try:
             result = submit_order()
             logger.info(f"Order submission result: {result}")
+
+            # Get logs and send email
+            log_contents = get_todays_logs()
+            send_execution_email(log_contents)
+
         except Exception as e:
             logger.error(f"Error executing trade: {str(e)}")
+            # Still send email even if trade fails
+            log_contents = get_todays_logs()
+            send_execution_email(log_contents)
     else:
         logger.info("Skipping trade execution based on conditions")
 
