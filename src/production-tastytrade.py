@@ -593,13 +593,26 @@ def trading_job():
 
 
 if __name__ == '__main__':
-    # Schedule the job for 09:36 ET every day
-    schedule.every().day.at("09:36").do(trading_job)
+    # Convert local time to Eastern Time for scheduling
+    et_tz = pytz.timezone('America/New_York')
+    local_tz = datetime.now().astimezone().tzinfo
+
+    # Calculate the time difference between local and ET
+    local_time = datetime.now().astimezone(local_tz)
+    et_time = local_time.astimezone(et_tz)
+    time_diff = int((local_time.utcoffset() - et_time.utcoffset()).total_seconds() / 3600)
+
+    # Adjust scheduling time based on the time difference
+    schedule_time = (datetime.strptime("09:36", "%H:%M") + timedelta(hours=time_diff)).strftime("%H:%M")
+
+    # Schedule the job using the adjusted local time
+    schedule.every().day.at(schedule_time).do(trading_job)
 
     # Log initial scheduling
-    et_tz = pytz.timezone('America/New_York')
-    current_time = datetime.now(pytz.UTC).astimezone(et_tz)
-    logger.info(f"Current time (ET): {current_time.strftime('%H:%M:%S')}")
+    logger.info(f"Current time (ET): {et_time.strftime('%H:%M:%S')}")
+    logger.info(f"Local timezone: {local_tz}")
+    logger.info(f"Time difference from ET: {time_diff} hours")
+    logger.info(f"Scheduling job for {schedule_time} local time (09:36 ET)")
     logger.info("Trading scheduler initialized - will execute at 09:36 ET each day")
 
     # Keep the script running
