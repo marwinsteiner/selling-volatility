@@ -1,0 +1,474 @@
+2024-12-15 19:32:08.906 | INFO     | __main__:<module>:38 - Using environment: sandbox
+2024-12-15 19:32:09.278 | WARNING  | __main__:get_session_token:65 - Session token expired or invalid, generating new session token...
+2024-12-15 19:32:09.283 | INFO     | __main__:get_session_token:68 - Using environment:sandbox with base url: https://api.cert.tastyworks.com/sessions
+2024-12-15 19:32:09.288 | DEBUG    | __main__:get_session_token:80 - Generated payload.
+2024-12-15 19:32:09.952 | INFO     | __main__:get_session_token:83 - Posted request: <Response [201]>
+2024-12-15 19:32:09.953 | SUCCESS  | __main__:get_session_token:86 - Response status code: 201. Received session token.
+2024-12-15 19:32:09.956 | DEBUG    | __main__:get_session_token:90 - Saved new session token expiring at: 2024-12-16 19:32:09.956610.
+2024-12-15 19:32:09.968 | SUCCESS  | __main__:get_session_token:96 - Stored new session token and token expiry.
+2024-12-15 19:36:20.160 | INFO     | __main__:<module>:5 - Using environment: sandbox
+2024-12-15 19:40:48.607 | INFO     | __main__:<module>:5 - Using environment: sandbox
+2024-12-15 19:43:29.511 | SUCCESS  | __main__:get_session_token:60 - Found existing session token.
+2024-12-15 19:43:29.515 | INFO     | __main__:get_session_token:61 - Existing session token will expire at 2024-12-16 19:32:09.956610.
+2024-12-15 19:43:29.529 | WARNING  | __main__:get_quote_token:36 - Quote token expired or invalid, requesting new quote token...
+2024-12-15 19:43:29.532 | INFO     | __main__:get_quote_token:39 - Using environment:sandbox with base url: https://api.cert.tastyworks.com/api-quote-tokens
+2024-12-15 19:43:29.539 | DEBUG    | __main__:get_quote_token:48 - Generated headers with session token.
+2024-12-15 19:43:30.263 | INFO     | __main__:get_quote_token:50 - GET request: <Response [200]>
+2024-12-15 19:43:30.265 | SUCCESS  | __main__:get_quote_token:53 - Response status code: 200. Received quote token.
+2024-12-15 19:43:30.269 | DEBUG    | __main__:get_quote_token:59 - Saved new quote token expiring at: 2024-12-16 19:43:30.269836.
+2024-12-15 19:43:30.327 | SUCCESS  | __main__:get_quote_token:66 - Stored new quote token, dxlink url, and token expiry.
+2024-12-15 19:57:34.644 | SUCCESS  | __main__:get_session_token:60 - Found existing session token.
+2024-12-15 19:57:34.648 | INFO     | __main__:get_session_token:61 - Existing session token will expire at 2024-12-16 19:32:09.956610.
+2024-12-15 19:57:34.668 | SUCCESS  | __main__:get_quote_token:31 - Found existing quote token.
+2024-12-15 19:57:34.672 | INFO     | __main__:get_quote_token:32 - Existing quote token will expire at 2024-12-16 19:43:30.269836.
+2024-12-15 19:57:36.769 | ERROR    | __main__:get_closest_45_dte_spy_streamer_symbol:75 - Error fetching streamer symbol: can't subtract offset-naive and offset-aware datetimes
+2024-12-15 19:59:01.426 | SUCCESS  | __main__:get_session_token:60 - Found existing session token.
+2024-12-15 19:59:01.429 | INFO     | __main__:get_session_token:61 - Existing session token will expire at 2024-12-16 19:32:09.956610.
+2024-12-15 19:59:01.442 | SUCCESS  | __main__:get_quote_token:31 - Found existing quote token.
+2024-12-15 19:59:01.445 | INFO     | __main__:get_quote_token:32 - Existing quote token will expire at 2024-12-16 19:43:30.269836.
+2024-12-15 19:59:03.622 | SUCCESS  | __main__:get_closest_45_dte_spy_streamer_symbol:73 - Found streamer symbol: .SPY250131C340 for expiration 2025-01-31
+2024-12-15 19:59:05.328 | SUCCESS  | __main__:connect:92 - Successfully connected to DXLink and completed setup
+2024-12-15 19:59:05.335 | INFO     | __main__:subscribe_greeks:110 - Subscribed to Greeks data for .SPY250131C340
+2024-12-15 19:59:05.344 | INFO     | __main__:_handle_auth_state:186 - Auth state changed to: UNAUTHORIZED
+2024-12-15 19:59:05.425 | INFO     | __main__:_handle_auth_state:186 - Auth state changed to: UNAUTHORIZED
+2024-12-15 19:59:05.431 | INFO     | __main__:_handle_auth_state:186 - Auth state changed to: UNAUTHORIZED
+2024-12-15 19:59:05.438 | INFO     | __main__:_handle_auth_state:186 - Auth state changed to: UNAUTHORIZED
+2024-12-15 19:59:35.335 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:35.347 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:36.349 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:36.361 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:37.376 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:37.380 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:38.388 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:38.396 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:39.402 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:39.406 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:40.418 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:40.423 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:41.443 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:41.448 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:42.452 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:42.460 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:43.457 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:43.467 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:44.481 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:44.488 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:45.502 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:45.510 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:46.515 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:46.526 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:47.523 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:47.525 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:48.516 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:48.518 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:49.527 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:49.530 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:50.538 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:50.539 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:51.549 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:51.568 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:52.574 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:52.583 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:53.595 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:53.599 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:54.607 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:54.613 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:55.608 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:55.639 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:56.635 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:56.637 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:57.659 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:57.668 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:58.671 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:58.672 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:59.680 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 19:59:59.688 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:00.709 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:00.713 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:01.718 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:01.720 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:02.727 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:02.740 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:03.751 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:03.753 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:04.765 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:04.769 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:05.773 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:05.782 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:06.803 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:06.805 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:07.810 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:07.812 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:08.820 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:08.822 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:09.834 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:09.836 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:10.835 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:10.841 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:11.862 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:11.864 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:12.872 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:12.878 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:13.886 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:13.890 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:14.908 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:14.911 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:15.920 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:15.922 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:16.924 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:16.927 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:17.927 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:17.931 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:18.940 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:18.947 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:19.943 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:19.974 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:20.951 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:20.982 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:21.953 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:22.000 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:22.961 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:23.023 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:23.972 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:24.037 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:24.986 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:25.065 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:25.990 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:26.084 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:27.003 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:27.097 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:28.008 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:28.100 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:29.031 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:29.128 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:30.046 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:30.139 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:31.055 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:31.149 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:32.069 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:32.163 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:33.081 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:33.174 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:34.091 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:34.187 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:35.109 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:35.202 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:36.122 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:36.215 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:37.138 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:37.231 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:38.150 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:38.243 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:39.153 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:39.246 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:40.163 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:40.273 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:41.161 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:41.272 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:42.178 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:42.272 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:43.204 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:43.268 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:44.235 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:44.281 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:45.237 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:45.299 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:46.248 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:46.311 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:47.265 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:47.328 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:48.278 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:48.341 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:49.294 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:49.355 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:50.306 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:50.369 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:51.315 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:51.376 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:52.324 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:52.387 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:53.333 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:53.408 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:54.350 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:54.430 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:55.363 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:55.440 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:56.372 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:56.451 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:57.387 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:57.464 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:58.392 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:58.471 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:59.422 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:00:59.484 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:00.431 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:00.493 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:01.443 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:01.505 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:02.459 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:02.521 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:03.472 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:03.520 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:04.502 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:04.534 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:05.511 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:05.521 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:06.520 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:06.528 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:07.548 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:07.556 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:08.562 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:08.572 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:09.574 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:09.580 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:10.600 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:10.602 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:11.597 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:11.605 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:12.607 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:12.612 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:13.620 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:13.627 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:14.632 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:14.639 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:15.646 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:15.653 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:16.661 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:16.665 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:17.659 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:17.671 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:18.687 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:18.695 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:19.705 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:19.710 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:20.719 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:20.722 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:21.727 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:21.730 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:22.739 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:22.743 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:23.739 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:23.768 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:24.752 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:24.783 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:25.765 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:25.768 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:26.787 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:26.790 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:27.792 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:27.795 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:28.810 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:28.812 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:29.824 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:29.827 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:30.838 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:30.841 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:31.849 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:31.854 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:32.852 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:32.857 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:33.868 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:33.872 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:34.875 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:34.878 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:35.888 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:35.891 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:36.902 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:36.907 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:37.914 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:37.917 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:38.913 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:38.917 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:39.933 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:39.937 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:40.960 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:40.964 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:41.970 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:41.977 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:42.973 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:42.977 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:43.977 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:43.980 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:44.987 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:44.991 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:45.983 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:46.013 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:46.999 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:47.031 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:48.017 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:48.021 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:49.030 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:49.033 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:50.043 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:50.045 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:51.051 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:51.054 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:52.063 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:52.067 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:53.073 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:53.076 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:54.082 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:54.085 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:55.092 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:55.096 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:56.099 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:56.102 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:57.097 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:57.100 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:58.110 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:58.116 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:59.129 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:01:59.137 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:00.141 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:00.146 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:01.152 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:01.155 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:02.160 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:02.165 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:03.153 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:03.183 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:04.160 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:04.205 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:05.172 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:05.220 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:06.175 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:06.236 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:07.191 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:07.254 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:08.203 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:08.265 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:09.204 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:09.282 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:10.207 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:10.300 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:11.213 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:11.308 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:12.224 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:12.333 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:13.234 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:13.345 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:14.240 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:14.366 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:15.251 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:15.376 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:16.263 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:16.389 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:17.279 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:17.403 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:18.294 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:18.419 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:19.311 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:19.438 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:20.329 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:20.454 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:21.338 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:21.463 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:22.348 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:22.487 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:23.354 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:23.481 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:24.373 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:24.498 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:25.385 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:25.510 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:26.397 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:26.537 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:27.408 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:27.550 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:28.422 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:28.565 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:29.439 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:29.580 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:30.453 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:30.592 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:31.463 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:31.604 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:32.474 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:32.616 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:33.488 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:33.629 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:34.494 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:34.635 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:35.506 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:35.666 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:36.508 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:36.695 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:37.517 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:37.704 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:38.525 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:38.712 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:39.537 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:39.741 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:40.546 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:40.749 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:41.554 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:41.763 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:42.572 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:42.772 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:43.593 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:43.773 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:44.596 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:44.800 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:45.608 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:45.808 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:46.611 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:46.829 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:47.623 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:47.842 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:48.636 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:48.856 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:49.649 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:49.868 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:50.670 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:50.886 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:51.683 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:51.901 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:52.690 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:52.923 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:53.698 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:53.934 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:54.704 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:54.940 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:55.734 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:55.954 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:56.748 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:56.967 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:57.757 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:57.989 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:58.780 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:58.998 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:02:59.793 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:00.012 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:00.806 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:01.023 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:01.833 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:02.037 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:02.829 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:03.062 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:03.838 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:04.073 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:04.853 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:05.085 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:05.863 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:06.099 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:06.866 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:07.103 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:07.881 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:08.118 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:08.897 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:09.132 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:09.924 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:10.149 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:10.937 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:11.171 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:11.944 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:12.196 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:12.939 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:13.224 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:13.937 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:14.251 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:14.950 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:15.273 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:15.955 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:16.299 | ERROR    | __main__:_message_handler:156 - Error handling message: received 1000 (OK) Bye; then sent 1000 (OK) Bye
+2024-12-15 20:03:16.966 | ERROR    | __main__:_keepalive_loop:141 - Keepalive error: received 1000 (OK) Bye; then sent 1000 (OK) Bye
