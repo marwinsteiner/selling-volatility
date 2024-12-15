@@ -1,0 +1,15 @@
+2024-11-02 13:35:39.898 | INFO     | __main__:<module>:34 - Using environment: sandbox
+2024-11-02 13:35:40.361 | INFO     | __main__:is_market_open:166 - Current ET time: 09:35:40
+2024-11-02 13:35:40.362 | INFO     | __main__:is_market_open:167 - Market open time: 09:30:00
+2024-11-02 13:35:40.406 | WARNING  | __main__:get_session_token:61 - Session token expired or invalid, generating new session token...
+2024-11-02 13:35:40.406 | INFO     | __main__:get_session_token:64 - Using environment:sandbox with base url: https://api.cert.tastyworks.com/sessions
+2024-11-02 13:35:40.407 | DEBUG    | __main__:get_session_token:76 - Generated payload.
+2024-11-02 13:35:40.879 | INFO     | __main__:get_session_token:79 - Posted request: <Response [201]>
+2024-11-02 13:35:40.880 | SUCCESS  | __main__:get_session_token:82 - Response status code: 201. Received session token.
+2024-11-02 13:35:40.881 | DEBUG    | __main__:get_session_token:86 - Saved new session token expiring at: 2024-11-03 13:35:40.881120.
+2024-11-02 13:35:40.905 | SUCCESS  | __main__:get_session_token:92 - Stored new session token and token expiry.
+2024-11-02 13:35:41.293 | SUCCESS  | __main__:account_information_and_balances:119 - Retrieved account information for account 5WY04484 - a sandbox account.
+2024-11-02 13:35:41.695 | SUCCESS  | __main__:account_information_and_balances:128 - Retrieved account balances for account 5WY04484 - a sandbox account.
+2024-11-02 13:35:41.696 | INFO     | __main__:account_information_and_balances:133 - Option Buying Power: $1000000.0
+2024-11-02 13:35:43.290 | INFO     | __main__:get_underlying_regime:229 - Retrieved and calculated underlying regime.
+2024-11-02 13:35:44.045 | INFO     | __main__:get_underlying_regime:229 - Retrieved and calculated underlying regime.

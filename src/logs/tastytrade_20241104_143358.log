@@ -1,0 +1,37 @@
+2024-11-04 14:33:58.748 | INFO     | __main__:<module>:34 - Using environment: production
+2024-11-04 14:34:00.427 | INFO     | __main__:is_market_open:166 - Current ET time: 09:34:00
+2024-11-04 14:34:00.428 | INFO     | __main__:is_market_open:167 - Market open time: 09:30:00
+2024-11-04 14:34:00.428 | INFO     | __main__:<module>:503 - Waiting for market open...
+2024-11-04 14:34:30.430 | INFO     | __main__:is_market_open:166 - Current ET time: 09:34:30
+2024-11-04 14:34:30.431 | INFO     | __main__:is_market_open:167 - Market open time: 09:30:00
+2024-11-04 14:34:30.431 | INFO     | __main__:<module>:503 - Waiting for market open...
+2024-11-04 14:35:00.435 | INFO     | __main__:is_market_open:166 - Current ET time: 09:35:00
+2024-11-04 14:35:00.441 | INFO     | __main__:is_market_open:167 - Market open time: 09:30:00
+2024-11-04 14:35:00.446 | INFO     | __main__:<module>:503 - Waiting for market open...
+2024-11-04 14:35:30.456 | INFO     | __main__:is_market_open:166 - Current ET time: 09:35:30
+2024-11-04 14:35:30.457 | INFO     | __main__:is_market_open:167 - Market open time: 09:30:00
+2024-11-04 14:35:30.459 | INFO     | __main__:<module>:503 - Waiting for market open...
+2024-11-04 14:36:00.462 | INFO     | __main__:is_market_open:166 - Current ET time: 09:36:00
+2024-11-04 14:36:00.464 | INFO     | __main__:is_market_open:167 - Market open time: 09:30:00
+2024-11-04 14:36:00.465 | INFO     | __main__:<module>:492 - Trading time reached - executing trading tasks
+2024-11-04 14:36:00.715 | WARNING  | __main__:get_session_token:61 - Session token expired or invalid, generating new session token...
+2024-11-04 14:36:00.716 | INFO     | __main__:get_session_token:71 - Using environment:production with base url: https://api.tastyworks.com/sessions
+2024-11-04 14:36:00.720 | DEBUG    | __main__:get_session_token:76 - Generated payload.
+2024-11-04 14:36:01.633 | INFO     | __main__:get_session_token:79 - Posted request: <Response [201]>
+2024-11-04 14:36:01.634 | SUCCESS  | __main__:get_session_token:82 - Response status code: 201. Received session token.
+2024-11-04 14:36:01.639 | DEBUG    | __main__:get_session_token:86 - Saved new session token expiring at: 2024-11-05 14:36:01.638896.
+2024-11-04 14:36:01.675 | SUCCESS  | __main__:get_session_token:92 - Stored new session token and token expiry.
+2024-11-04 14:36:02.137 | SUCCESS  | __main__:account_information_and_balances:119 - Retrieved account information for account 5WX16582 - a production account.
+2024-11-04 14:36:02.798 | SUCCESS  | __main__:account_information_and_balances:128 - Retrieved account balances for account 5WX16582 - a production account.
+2024-11-04 14:36:02.801 | INFO     | __main__:account_information_and_balances:133 - Option Buying Power: $40161.195
+2024-11-04 14:36:05.799 | INFO     | __main__:get_underlying_regime:229 - Retrieved and calculated underlying regime.
+2024-11-04 14:36:08.159 | INFO     | __main__:get_underlying_regime:229 - Retrieved and calculated underlying regime.
+2024-11-04 14:36:08.904 | SUCCESS  | __main__:calculate_expected_move:273 - Calculated expected move.
+2024-11-04 14:36:11.149 | INFO     | __main__:calculate_expected_move:296 - Generated Call-Side Trade | Short: 5740 Long: 5745
+2024-11-04 14:36:13.259 | INFO     | __main__:get_underlying_regime:229 - Retrieved and calculated underlying regime.
+2024-11-04 14:36:15.505 | SUCCESS  | __main__:calculate_expected_move:273 - Calculated expected move.
+2024-11-04 14:36:15.983 | INFO     | __main__:calculate_expected_move:296 - Generated Call-Side Trade | Short: 5740 Long: 5745
+2024-11-04 14:36:21.062 | SUCCESS  | __main__:get_option_chain_data:358 - Retrieved nested option chain.
+2024-11-04 14:36:21.066 | SUCCESS  | __main__:get_option_chain_data:368 - Retrieved call-side tickers.
+2024-11-04 14:36:21.848 | SUCCESS  | __main__:submit_order:471 - Validated order, no issues in preflight.
+2024-11-04 14:36:22.372 | SUCCESS  | __main__:submit_order:480 - Sent order.

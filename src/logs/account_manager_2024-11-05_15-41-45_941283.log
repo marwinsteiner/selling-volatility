@@ -1,0 +1,4 @@
+2024-11-05 15:41:47.138 | INFO     | __main__:connect_websocket:47 - WebSocket connection established
+2024-11-05 15:41:47.222 | ERROR    | __main__:main:268 - WebSocket connection error: 'Settings' object has no attribute 'ACCOUNT_NUMBER'
+2024-11-05 15:41:52.658 | INFO     | __main__:connect_websocket:47 - WebSocket connection established
+2024-11-05 15:41:52.747 | ERROR    | __main__:main:268 - WebSocket connection error: 'Settings' object has no attribute 'ACCOUNT_NUMBER'

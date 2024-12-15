@@ -1,0 +1,6 @@
+2024-11-12 14:35:45.023 | INFO     | __main__:<module>:38 - Using environment: production
+2024-11-12 14:35:45.965 | SUCCESS  | __main__:get_session_token:60 - Found existing session token.
+2024-11-12 14:35:45.968 | INFO     | __main__:get_session_token:61 - Existing session token will expire at 2024-11-12 14:38:04.851303.
+2024-11-12 14:35:46.468 | SUCCESS  | __main__:account_information_and_balances:123 - Retrieved account information for account 5WX16582 - a production account.
+2024-11-12 14:35:46.971 | SUCCESS  | __main__:account_information_and_balances:132 - Retrieved account balances for account 5WX16582 - a production account.
+2024-11-12 14:35:46.973 | INFO     | __main__:account_information_and_balances:137 - Option Buying Power: $33015.457
