@@ -1,0 +1,34 @@
+2024-12-19 17:35:39.295 | INFO     | __main__:<module>:38 - Using environment: sandbox
+2024-12-19 17:35:41.067 | WARNING  | __main__:get_session_token:65 - Session token expired or invalid, generating new session token...
+2024-12-19 17:35:41.069 | INFO     | __main__:get_session_token:68 - Using environment:sandbox with base url: https://api.cert.tastyworks.com/sessions
+2024-12-19 17:35:41.073 | DEBUG    | __main__:get_session_token:80 - Generated payload.
+2024-12-19 17:35:41.726 | INFO     | __main__:get_session_token:83 - Posted request: <Response [201]>
+2024-12-19 17:35:41.728 | SUCCESS  | __main__:get_session_token:86 - Response status code: 201. Received session token.
+2024-12-19 17:35:41.729 | DEBUG    | __main__:get_session_token:90 - Saved new session token expiring at: 2024-12-20 17:35:41.729062.
+2024-12-19 17:35:41.743 | SUCCESS  | __main__:get_session_token:96 - Stored new session token and token expiry.
+2024-12-19 17:35:45.558 | INFO     | __main__:<module>:5 - Using environment: sandbox
+2024-12-19 17:35:50.193 | SUCCESS  | __main__:get_session_token:60 - Found existing session token.
+2024-12-19 17:35:50.196 | INFO     | __main__:get_session_token:61 - Existing session token will expire at 2024-12-20 17:35:41.729062.
+2024-12-19 17:35:50.207 | WARNING  | __main__:get_quote_token:36 - Quote token expired or invalid, requesting new quote token...
+2024-12-19 17:35:50.210 | INFO     | __main__:get_quote_token:39 - Using environment:sandbox with base url: https://api.cert.tastyworks.com/api-quote-tokens
+2024-12-19 17:35:50.213 | DEBUG    | __main__:get_quote_token:48 - Generated headers with session token.
+2024-12-19 17:35:50.719 | INFO     | __main__:get_quote_token:50 - GET request: <Response [200]>
+2024-12-19 17:35:50.723 | SUCCESS  | __main__:get_quote_token:53 - Response status code: 200. Received quote token.
+2024-12-19 17:35:50.728 | DEBUG    | __main__:get_quote_token:59 - Saved new quote token expiring at: 2024-12-20 17:35:50.728869.
+2024-12-19 17:35:50.774 | SUCCESS  | __main__:get_quote_token:66 - Stored new quote token, dxlink url, and token expiry.
+2024-12-19 17:36:35.269 | SUCCESS  | __main__:get_session_token:60 - Found existing session token.
+2024-12-19 17:36:35.270 | INFO     | __main__:get_session_token:61 - Existing session token will expire at 2024-12-20 17:35:41.729062.
+2024-12-19 17:36:35.280 | SUCCESS  | __main__:get_quote_token:31 - Found existing quote token.
+2024-12-19 17:36:35.282 | INFO     | __main__:get_quote_token:32 - Existing quote token will expire at 2024-12-20 17:35:50.728869.
+2024-12-19 17:36:37.130 | SUCCESS  | __main__:get_closest_45_dte_spy_streamer_symbol:78 - Found streamer symbol: .SPY250131C340 for expiration 2025-01-31
+2024-12-19 17:36:37.142 | INFO     | __main__:connect:34 - Connecting to wss://tasty-openapi-ws.dxfeed.com/realtime
+2024-12-19 17:36:38.449 | INFO     | __main__:connect:46 - Sending SETUP message
+2024-12-19 17:36:38.554 | INFO     | __main__:connect:52 - SETUP completed successfully
+2024-12-19 17:36:38.564 | INFO     | __main__:connect:65 - Sending AUTH message
+2024-12-19 17:36:38.669 | INFO     | __main__:connect:75 - Authorization successful
+2024-12-19 17:36:38.670 | INFO     | __main__:connect:84 - Requesting channel
+2024-12-19 17:36:38.770 | INFO     | __main__:connect:93 - Channel opened successfully
+2024-12-19 17:36:38.775 | INFO     | __main__:connect:115 - Setting up feed
+2024-12-19 17:36:38.876 | INFO     | __main__:connect:123 - Feed setup completed successfully
+2024-12-19 17:36:38.877 | SUCCESS  | __main__:connect:131 - Successfully connected to DXLink and completed setup sequence
+2024-12-19 17:36:38.878 | INFO     | __main__:subscribe_greeks:155 - Subscribing to Greeks for .SPY250131C340
