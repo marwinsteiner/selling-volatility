@@ -20,6 +20,7 @@ pymongo = "4.9"
 motor = "^3.6.0"
 schedule = "^1.2.2"
 jupyter = "^1.1.1"
+websockets = "^14.2"
 
 
 [build-system]

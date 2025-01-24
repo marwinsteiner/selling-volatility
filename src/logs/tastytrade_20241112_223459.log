@@ -1,6 +1,0 @@
-2024-11-12 22:34:59.527 | INFO     | __main__:<module>:38 - Using environment: production
-2024-11-12 22:34:59.927 | INFO     | __main__:<module>:612 - Current time (ET): 17:34:59
-2024-11-12 22:34:59.927 | INFO     | __main__:<module>:613 - Local timezone: GMT Standard Time
-2024-11-12 22:34:59.928 | INFO     | __main__:<module>:614 - Time difference from ET: 5 hours
-2024-11-12 22:34:59.928 | INFO     | __main__:<module>:615 - Scheduling job for 14:36 local time (09:36 ET)
-2024-11-12 22:34:59.928 | INFO     | __main__:<module>:616 - Trading scheduler initialized - will execute at 09:36 ET each day

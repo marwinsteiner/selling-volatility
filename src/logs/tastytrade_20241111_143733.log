@@ -1,3 +1,0 @@
-2024-11-11 14:37:33.636 | INFO     | __main__:<module>:38 - Using environment: production
-2024-11-11 14:37:34.591 | INFO     | __main__:<module>:602 - Current time (ET): 09:37:34
-2024-11-11 14:37:34.592 | INFO     | __main__:<module>:603 - Trading scheduler initialized - will execute at 09:36 ET each day
