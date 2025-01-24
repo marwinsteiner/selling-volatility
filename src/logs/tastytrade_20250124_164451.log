@@ -422,3 +422,4 @@
 2025-01-24 18:25:05.254 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"FEED_DATA","channel":3,"data":["Greeks",["Greeks",".SPY250124C610",0.1449989087693841,0.1377376805638014,0.1721318813479536,0.1621456082432905,-0.1449989087693841,3.68490109863451E-4,0.0291333617906419,"Greeks",".SPY250124P610",1.610020345987355,0.1282740895048694,-0.845121995578835,0.1625625697065937,-0.1183203459873177,-0.001817368848524161,0.0272014555029908]]}
 2025-01-24 18:25:05.942 | INFO     | __main__:handle_greeks:576 - Current Straddle PnL: $-1218.87
 2025-01-24 18:25:23.967 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
+2025-01-24 18:25:53.971 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
