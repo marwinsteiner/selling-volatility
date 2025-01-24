@@ -6,6 +6,30 @@ from datetime import datetime, timezone, timedelta
 from typing import Optional, Dict, List, Any, Callable
 from dataclasses import dataclass
 
+
+# Set up a logging directory
+log_dir = Path(r'C:\Users\marwi\PycharmProjects\selling-volatility\src\logs')
+log_dir.mkdir(exist_ok=True)
+
+# Create log file path with timestamp
+log_file = log_dir / f"tastytrade_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+
+# Configure logger to write to both console and file
+logger.add(log_file, rotation="1 day")
+
+# Load settings and secrets
+settings = Dynaconf(
+    settings_files=['settings.json', '.secrets.json'],
+)
+
+EnvironmentType = Literal['sandbox', 'production']  # create a type alias
+
+# ENVIRONMENT toggles between sandbox (testing) and production (live trading)
+ENVIRONMENT: EnvironmentType = 'sandbox'
+logger.info(f'Using environment: {ENVIRONMENT}')
+
+environment = 'sandbox'
+
 @dataclass
 class DXLinkConfig:
     """Configuration for DXLink connection"""
@@ -312,34 +336,138 @@ class PnLTracker:
         )
         return current_value - self.initial_value
 
-def get_session_token(environment: str) -> Optional[str]:
-    """Get session token for TastyTrade API"""
-    try:
-        base_url = (settings.TASTY_SANDBOX_BASE_URL if environment == 'sandbox' 
-                   else settings.TASTY_PRODUCTION_BASE_URL)
-        
-        # Your session token logic here
-        # This should be implemented based on your authentication requirements
-        pass
-        
-    except Exception as e:
-        logger.error(f"Error getting session token: {e}")
+def get_session_token(environment: EnvironmentType):
+    """
+    Get or generate a session token based on the environment.
+
+    Args:
+        environment (str): The environment type ('sandbox' or 'production').
+
+    Returns:
+        str: The session token if found or generated, None if the request fails.
+
+    Examples:
+        session_token = get_session_token('sandbox')
+    """
+    with shelve.open(str(Path(settings.SESSION_SHELF_DIR) / 'session_data')) as db:
+        session_token = db.get('session_token')
+        token_expiry = db.get('token_expiry')
+
+        # Check if we have a valid token that hasn't expired
+        if session_token and token_expiry and datetime.now() < token_expiry:
+            logger.success('Found existing session token.', extra={'session_token': session_token})
+            logger.info(f'Existing session token will expire at {token_expiry}.')
+            return session_token
+
+    # If we get here, we either don't have a token or it's expired
+    logger.warning('Session token expired or invalid, generating new session token...')
+    if environment == 'sandbox':
+        url = f"{settings.TASTY_SANDBOX_BASE_URL}/sessions"
+        logger.info(f'Using environment:{environment} with base url: {url}')
+        payload = {
+            "login": settings.TASTY_SANDBOX.USERNAME,
+            "password": settings.TASTY_SANDBOX.PASSWORD
+        }
+    else:
+        url = f"{settings.TASTY_PRODUCTION_BASE_URL}/sessions"
+        logger.info(f'Using environment:{environment} with base url: {url}')
+        payload = {
+            "login": settings.TASTY_PRODUCTION.USERNAME,
+            "password": settings.TASTY_PRODUCTION.PASSWORD
+        }
+    logger.debug('Generated payload.')
+    headers = {"Content-Type": "application/json"}
+    response = requests.post(url, json=payload, headers=headers)
+    logger.info(f'Posted request: {response}')
+
+    if response.status_code == 201:
+        logger.success(f'Response status code: {response.status_code}. Received session token.')
+        data = response.json()
+        new_session_token = data['data']['session-token']
+        new_token_expiry = datetime.now() + timedelta(hours=24)
+        logger.debug(f'Saved new session token expiring at: {new_token_expiry}.')
+
+        # Open a new shelf connection to store the token
+        with shelve.open(str(Path(settings.SESSION_SHELF_DIR) / 'session_data')) as db:
+            db['session_token'] = new_session_token
+            db['token_expiry'] = new_token_expiry
+            logger.success('Stored new session token and token expiry.')
+
+        return new_session_token
+    else:
+        logger.error(f'Session token request failed with response code: {response.status_code}.')
+        logger.debug(f'{response.text}')
         return None
 
-def get_quote_token(environment: str, session_token: str) -> Tuple[Optional[str], Optional[str]]:
-    """Get quote token and DXLink URL for streaming"""
-    try:
-        base_url = (settings.TASTY_SANDBOX_BASE_URL if environment == 'sandbox' 
-                   else settings.TASTY_PRODUCTION_BASE_URL)
-        
-        headers = {"Authorization": session_token}
-        
-        # Your quote token logic here
-        # This should be implemented based on your streaming requirements
-        pass
-        
-    except Exception as e:
-        logger.error(f"Error getting quote token: {e}")
+def get_quote_token(environment: EnvironmentType, session_token: str):
+    """
+    Get an API quote token for streaming market data through DXLink.
+    
+    This token identifies the customer to TastyTrade's quote provider (DXLink).
+    Note: You must be a registered tastytrade customer (with an opened account) to access quote streaming.
+
+    Args:
+        environment (str): The environment type ('sandbox' or 'production').
+        session_token (str): Valid session token for authentication.
+
+    Returns:
+        tuple[str, str]: A tuple of (quote_token, dxlink_url) if successful, (None, None) if failed.
+
+    Examples:
+        quote_token, dxlink_url = get_quote_token('sandbox', session_token)
+    """
+    with shelve.open(str(Path(settings.SESSION_SHELF_DIR) / 'session_data')) as db:
+        quote_token = db.get('quote_token')
+        dxlink_url = db.get('dxlink_url')
+        quote_token_expiry = db.get('quote_token_expiry')
+
+        # Check if we have a valid token that hasn't expired
+        if quote_token and dxlink_url and quote_token_expiry and datetime.now() < quote_token_expiry:
+            logger.success('Found existing quote token.', extra={'quote_token': quote_token})
+            logger.info(f'Existing quote token will expire at {quote_token_expiry}.')
+            return quote_token, dxlink_url
+
+    # If we get here, we either don't have a token or it's expired
+    logger.warning('Quote token expired or invalid, requesting new quote token...')
+    if environment == 'sandbox':
+        url = f"{settings.TASTY_SANDBOX_BASE_URL}/api-quote-tokens"
+        logger.info(f'Using environment:{environment} with base url: {url}')
+    else:
+        url = f"{settings.TASTY_PRODUCTION_BASE_URL}/api-quote-tokens"
+        logger.info(f'Using environment:{environment} with base url: {url}')
+
+    headers = {
+        "Authorization": session_token
+    }
+    
+    logger.debug('Generated headers with session token.')
+    response = requests.get(url, headers=headers)  # Using GET instead of POST
+    logger.info(f'GET request: {response}')
+
+    if response.status_code == 200:  # Success code for GET is 200, not 201
+        logger.success(f'Response status code: {response.status_code}. Received quote token.')
+        data = response.json()['data']
+        new_quote_token = data['token']
+        new_dxlink_url = data['dxlink-url']
+        # Quote tokens are valid for 24 hours per documentation
+        new_token_expiry = datetime.now() + timedelta(hours=24)
+        logger.debug(f'Saved new quote token expiring at: {new_token_expiry}.')
+
+        # Open a new shelf connection to store the token and dxlink url
+        with shelve.open(str(Path(settings.SESSION_SHELF_DIR) / 'session_data')) as db:
+            db['quote_token'] = new_quote_token
+            db['dxlink_url'] = new_dxlink_url
+            db['quote_token_expiry'] = new_token_expiry
+            logger.success('Stored new quote token, dxlink url, and token expiry.')
+
+        return new_quote_token, new_dxlink_url
+    else:
+        if response.status_code == 404:
+            error_data = response.json().get('error', {})
+            if error_data.get('code') == 'quote_streamer.customer_not_found_error':
+                logger.error('Quote token request failed: You must be a registered tastytrade customer with an opened account to access quote streaming.')
+        logger.error(f'Quote token request failed with response code: {response.status_code}.')
+        logger.debug(f'{response.text}')
         return None, None
 
 def get_streamer_symbol(environment: str, session_token: str, occ_symbol: str) -> Optional[str]:
