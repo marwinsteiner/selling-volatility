@@ -409,3 +409,16 @@
 2025-01-24 18:21:53.969 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
 2025-01-24 18:22:02.770 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"FEED_DATA","channel":3,"data":["Greeks",["Greeks",".SPY250124C610",0.1649993448044375,0.1334973345199876,0.1941029888225044,0.1788289870968697,-0.1649993448044375,4.22363915203899E-4,0.0316631374578696,"Greeks",".SPY250124P610",1.470030913785962,0.1254206134907335,-0.820847529757981,0.1811277661925081,-0.1400309137859206,-0.001793907179790672,0.0301298789667069]]}
 2025-01-24 18:22:02.772 | INFO     | __main__:handle_greeks:576 - Current Straddle PnL: $-1218.85
+2025-01-24 18:22:23.966 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
+2025-01-24 18:22:53.979 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
+2025-01-24 18:23:05.744 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"FEED_DATA","channel":3,"data":["Greeks",["Greeks",".SPY250124C610",0.1649987796751906,0.1344429962899641,0.1934377207286219,0.1776753988619473,-0.1649987796751906,4.18670708685455E-4,0.0315123644679652,"Greeks",".SPY250124P610",1.460029445657974,0.1196325761698365,-0.834653163425108,0.1809016717166859,-0.1204294456579556,-0.001814232153972922,0.0285500941008896]]}
+2025-01-24 18:23:05.745 | INFO     | __main__:handle_greeks:576 - Current Straddle PnL: $-1218.85
+2025-01-24 18:23:23.968 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
+2025-01-24 18:23:53.966 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
+2025-01-24 18:24:02.761 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"FEED_DATA","channel":3,"data":["Greeks",["Greeks",".SPY250124C610",0.1549988489484197,0.1352520777437298,0.1836859683343538,0.1715438359691733,-0.1549988489484197,3.95406816731151E-4,0.030438395017381,"Greeks",".SPY250124P610",1.525024094595405,0.1250744803917498,-0.835208942054502,0.1731342842120335,-0.125024094595428,-0.001805788534861841,0.0284089033448317]]}
+2025-01-24 18:24:02.763 | INFO     | __main__:handle_greeks:576 - Current Straddle PnL: $-1218.86
+2025-01-24 18:24:23.967 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
+2025-01-24 18:24:53.966 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}
+2025-01-24 18:25:05.254 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"FEED_DATA","channel":3,"data":["Greeks",["Greeks",".SPY250124C610",0.1449989087693841,0.1377376805638014,0.1721318813479536,0.1621456082432905,-0.1449989087693841,3.68490109863451E-4,0.0291333617906419,"Greeks",".SPY250124P610",1.610020345987355,0.1282740895048694,-0.845121995578835,0.1625625697065937,-0.1183203459873177,-0.001817368848524161,0.0272014555029908]]}
+2025-01-24 18:25:05.942 | INFO     | __main__:handle_greeks:576 - Current Straddle PnL: $-1218.87
+2025-01-24 18:25:23.967 | DEBUG    | __main__:_message_handler:416 - Raw message received: {"type":"KEEPALIVE","channel":0}

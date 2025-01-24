@@ -13589,3 +13589,339 @@
 2025-01-24 18:22:55.039 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
 2025-01-24 18:22:56.055 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
 2025-01-24 18:22:56.056 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:22:57.068 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:22:57.069 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:22:58.082 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:22:58.083 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:22:59.092 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:22:59.093 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:00.111 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:00.112 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:01.110 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:01.112 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:02.129 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:02.130 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:03.154 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:03.155 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:04.189 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:04.191 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:05.233 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:05.234 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:06.246 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:06.246 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:07.258 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:07.260 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:08.329 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:08.330 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:09.353 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:09.354 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:10.409 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:10.410 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:11.435 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:11.436 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:12.456 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:12.456 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:13.486 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:13.487 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:14.516 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:14.523 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:15.526 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:15.527 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:16.537 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:16.539 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:17.544 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:17.545 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:18.551 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:18.551 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:19.560 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:19.561 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:20.570 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:20.571 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:21.577 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:21.578 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:22.582 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:22.582 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:23.585 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:23.585 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:24.596 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:24.597 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:25.616 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:25.616 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:26.632 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:26.633 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:27.661 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:27.663 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:28.712 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:28.714 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:29.731 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:29.734 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:30.900 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:30.905 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:32.083 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:32.084 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:33.124 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:33.125 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:34.180 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:34.183 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:35.198 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:35.199 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:36.219 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:36.223 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:37.236 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:37.246 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:38.247 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:38.262 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:39.273 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:39.274 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:40.291 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:40.292 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:41.333 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:41.334 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:42.352 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:42.355 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:43.369 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:43.370 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:44.380 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:44.384 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:45.392 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:45.393 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:46.419 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:46.420 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:47.439 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:47.445 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:48.468 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:48.469 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:49.519 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:49.520 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:50.558 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:50.561 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:51.579 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:51.580 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:52.594 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:52.595 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:53.585 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:53.586 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:54.601 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:54.602 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:55.619 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:55.620 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:56.631 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:56.636 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:57.649 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:57.651 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:58.663 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:58.664 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:59.689 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:23:59.692 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:00.720 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:00.722 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:01.736 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:01.737 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:02.744 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:02.745 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:03.765 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:03.767 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:04.847 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:04.847 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:05.851 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:05.852 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:06.868 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:06.871 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:07.898 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:07.899 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:08.914 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:08.915 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:09.928 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:09.928 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:10.951 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:10.951 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:11.963 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:11.964 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:12.971 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:12.976 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:13.991 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:13.992 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:15.006 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:15.006 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:16.016 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:16.017 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:17.016 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:17.046 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:18.026 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:18.056 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:19.032 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:19.033 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:20.038 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:20.039 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:21.054 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:21.056 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:22.068 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:22.069 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:23.069 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:23.070 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:24.123 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:24.127 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:25.163 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:25.164 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:26.195 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:26.197 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:27.218 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:27.219 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:28.226 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:28.232 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:29.248 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:29.249 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:30.708 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:30.710 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:31.762 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:31.763 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:32.792 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:32.793 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:34.010 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:34.011 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:35.028 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:35.029 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:36.039 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:36.040 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:37.063 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:37.064 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:38.096 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:38.097 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:39.110 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:39.111 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:40.139 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:40.148 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:41.253 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:41.258 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:42.286 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:42.287 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:43.326 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:43.327 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:44.414 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:44.415 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:45.442 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:45.443 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:46.444 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:46.475 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:47.461 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:47.463 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:48.472 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:48.473 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:49.484 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:49.485 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:50.491 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:50.492 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:51.509 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:51.510 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:52.523 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:52.523 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:53.541 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:53.542 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:54.548 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:54.549 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:55.554 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:55.555 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:56.569 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:56.570 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:57.572 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:57.572 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:58.578 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:58.579 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:59.581 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:24:59.582 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:00.591 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:00.592 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:01.604 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:01.605 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:02.612 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:02.613 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:03.616 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:03.616 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:04.623 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:04.623 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:05.633 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:05.634 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:06.667 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:06.668 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:07.683 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:07.684 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:08.740 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:08.740 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:09.748 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:09.748 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:10.753 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:10.754 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:11.762 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:11.763 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:12.776 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:12.777 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:13.780 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:13.781 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:14.799 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:14.801 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:15.823 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:15.824 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:16.846 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:16.847 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:17.888 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:17.893 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:18.974 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:18.975 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:20.029 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:20.032 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:21.058 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:21.058 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:22.127 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:22.128 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:23.132 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:23.133 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:24.148 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:24.149 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:25.163 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:25.164 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:26.170 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:26.170 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:27.177 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:27.180 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:28.185 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:28.186 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:29.199 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:29.201 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:30.203 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:30.204 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:31.220 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:31.221 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:32.239 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:32.241 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:33.244 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:33.245 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:34.264 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:34.264 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:35.289 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:35.291 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:36.329 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:36.334 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:37.358 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:37.359 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:38.383 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:38.384 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:39.423 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:39.425 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:40.428 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:40.430 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:41.446 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:41.447 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:42.454 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:42.455 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:43.474 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:43.475 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:44.487 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:44.488 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:45.494 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:45.495 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:46.498 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:46.499 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:47.532 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:47.533 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:48.540 | ERROR    | __main__:_keepalive_loop:447 - Keepalive error: sent 1011 (internal error) keepalive ping timeout; no close frame received
+2025-01-24 18:25:48.542 | ERROR    | __main__:_message_handler:400 - Error handling message: sent 1011 (internal error) keepalive ping timeout; no close frame received
