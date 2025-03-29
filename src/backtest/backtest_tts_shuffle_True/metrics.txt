@@ -1,0 +1,58 @@
+Performance Metrics:
+SMA Strategy Final Capital: $5141.00
+Gaussian NB Final Capital: $4627.00
+Random Forest Final Capital: $33735.00
+Logistic Regression Final Capital: $5141.00
+
+Monthly Return Statistics:
+Average Monthly Return: 12.1%
+Best Month: 39.1%
+Worst Month: 1.0%
+% Positive Months: 63.9%
+
+Detailed Performance Metrics:
+                   Original SMA  Gaussian NB  Random Forest  \
+Annual Return             0.455        0.373          3.086   
+Annual Volatility         0.767        0.773          0.214   
+Sharpe Ratio              0.593        0.482         14.404   
+Max Drawdown             -0.526       -0.526         -0.111   
+Calmar Ratio              0.864        0.708         27.705   
+Total Return              0.979        0.781         11.985   
+
+                   Logistic Regression  
+Annual Return                    0.455  
+Annual Volatility                0.767  
+Sharpe Ratio                     0.593  
+Max Drawdown                    -0.526  
+Calmar Ratio                     0.864  
+Total Return                     0.979  
+
+Risk Metrics for Random Forest Strategy:
+Daily Value at Risk (95%): 0.00%
+Daily Expected Shortfall (95%): -0.61%
+Win Rate: 77.6%
+Profit Factor: 1.06
+
+Trade Statistics:
+Number of Trades: 459
+Win Rate: 77.6%
+Average Winner: $109.22
+Average Loser: $-356.73
+
+Strategy Consistency Metrics:
+% of Positive Months: 100.0%
+Worst Month: 1.0%
+Best Month: 39.1%
+Average Monthly Return: 12.2%
+Monthly Return Std Dev: 10.0%
+
+Consistency Metrics:
+Longest Winning Streak: 15 days
+Longest Losing Streak: 1 days
+Percent Profitable Days: 76.4%
+
+Additional Risk Metrics:
+Annualized Volatility: 21.4%
+Maximum Drawdown: -11.1%
+Sortino Ratio: 2.67
+Calmar Ratio: 12.91
