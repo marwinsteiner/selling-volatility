@@ -24,6 +24,7 @@ websockets = "^14.2"
 scikit-learn = "^1.6.1"
 xgboost = "^2.1.4"
 tqdm = "^4.67.1"
+seaborn = "^0.13.2"
 
 
 [build-system]
